@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entities.City;
@@ -21,6 +22,9 @@ public class CityController {
 		return cityservice.getAllCity();
 	}
 	
-	
+	@GetMapping("/allcity/{city_id}")
+	public City getOne(@PathVariable("city_id") int city_id) {
+		return cityservice.getOne(city_id);
+	}
 	
 }

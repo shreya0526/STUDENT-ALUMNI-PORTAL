@@ -9,15 +9,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entities.User;
-import com.example.demo.services.user_service;
+import com.example.demo.services.UserService;
 
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/user")
-public class user_controller {
+public class UserController {
 	@Autowired
-	user_service user_serv;
+	UserService user_serv;
 	
 	@GetMapping("/all")
 	public List<User> getall(){

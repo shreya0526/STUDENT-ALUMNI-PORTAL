@@ -3,9 +3,11 @@ package com.example.demo.repositories;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.entities.Role;
+import com.example.demo.entities.City;
+
+
 
 @Repository
-public interface role_repository extends JpaRepository<Role, Integer> {
+public interface CityRepository extends JpaRepository<City, Integer> {
 
 }

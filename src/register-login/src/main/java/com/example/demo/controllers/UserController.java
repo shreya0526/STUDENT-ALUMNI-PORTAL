@@ -36,11 +36,10 @@ public class UserController {
 	public List<User> getall(){
 		return user_serv.getAll();
 	}
+	
 	@PostMapping("/save")
 	public User save(@RequestBody User user) {
-		
-		return user_serv.save(user);
-		
+	     return user_serv.save(user);	
 	}
 	
 	@PostMapping("/saveas")

@@ -41,6 +41,16 @@ public class User {
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="city_id")
 	City city;
+
+	public User(String user_name, String password, String email, String phone_no, Role role, City city) {
+		super();
+		User_name = user_name;
+		this.password = password;
+		this.email = email;
+		this.phone_no = phone_no;
+		this.role = role;
+		this.city = city;
+	}
 	
 	
 	

@@ -11,10 +11,13 @@ import com.example.demo.repositories.user_repository;
 @Service
 public class user_service {
 	@Autowired
-	user_repository user_repo;
+	user_repository userrepository;
 	
 	public List<User> getAll(){
-		return user_repo.findAll();
+		return userrepository.findAll();
+	}
+	public User save(User user) {
+		return userrepository.save(user);
 	}
 	
 		

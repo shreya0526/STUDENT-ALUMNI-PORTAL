@@ -37,17 +37,7 @@
     <artifactId>spring-boot-starter-web</artifactId>
 </dependency>
 
-<!-- Spring Boot Starter Security -->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-security</artifactId>
-</dependency>
 
-<!-- Thymeleaf for frontend (optional for now) -->
-<dependency>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-thymeleaf</artifactId>
-</dependency>
 
 		<dependency>
 		

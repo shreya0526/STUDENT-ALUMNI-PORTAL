@@ -3,11 +3,14 @@ package com.example.demo.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entities.City;
@@ -36,20 +39,24 @@ public class UserController {
 	public List<User> getall(){
 		return user_serv.getAll();
 	}
-	@PostMapping("/save")
-	public User save(@RequestBody User user) {
-		
-		return user_serv.save(user);
-		
-	}
 	
-	@PostMapping("/saveas")
-	public User saveas(@RequestBody UserDummy userdummy) {
+	@PostMapping("/register")
+	public User register(@RequestBody UserDummy userdummy) {
 		Role role=role_serv.getOne(userdummy.getRole_id());
 		City city=city_serv.getOne(userdummy.getCity_id());
 		User user=new User(userdummy.getUser_name(), userdummy.getPassword(),userdummy.getEmail(),userdummy.getPhone_no(),role,city);
-		return user_serv.save(user);
-		
+		return user_serv.register(user);	
 		
 	}
-}
+	
+	@GetMapping("/login")
+	public User loginCheck(@RequestParam ("email") String email, @RequestParam("password")String password ) {
+		return user_serv.login(email, password);
+	}
+	
+	 
+	}
+	
+	
+	
+

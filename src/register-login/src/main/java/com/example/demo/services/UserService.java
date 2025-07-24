@@ -16,9 +16,13 @@ public class UserService {
 	public List<User> getAll(){
 		return userrepository.findAll();
 	}
-	public User save(User user) {
+	public User register(User user) {
 		return userrepository.save(user);
 	}
 	
-		
+	public User login(String email,String password) {
+		return userrepository.loginCheck(email,password);
+	}
+	
+	
 }

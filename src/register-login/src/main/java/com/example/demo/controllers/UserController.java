@@ -36,14 +36,9 @@ public class UserController {
 	public List<User> getall(){
 		return user_serv.getAll();
 	}
-	@PostMapping("/save")
-	public User save(@RequestBody User user) {
-		
-		return user_serv.save(user);
-		
-	}
 	
-	@PostMapping("/saveas")
+	
+	@PostMapping("/save")
 	public User saveas(@RequestBody UserDummy userdummy) {
 		Role role=role_serv.getOne(userdummy.getRole_id());
 		City city=city_serv.getOne(userdummy.getCity_id());

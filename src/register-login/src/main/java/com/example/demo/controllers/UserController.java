@@ -39,6 +39,14 @@ public class UserController {
 	public List<User> getall(){
 		return user_serv.getAll();
 	}
+<<<<<<< HEAD
+=======
+	
+	@PostMapping("/save")
+	public User save(@RequestBody User user) {
+	     return user_serv.save(user);	
+	}
+>>>>>>> 4d9c7ca466117603c7824aa265aaffd29e82cfba
 	
 	@PostMapping("/register")
 	public User register(@RequestBody UserDummy userdummy) {

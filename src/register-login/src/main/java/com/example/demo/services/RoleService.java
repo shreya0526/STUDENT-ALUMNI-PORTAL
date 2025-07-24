@@ -1,5 +1,6 @@
 package com.example.demo.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +15,9 @@ public class RoleService {
   
 	@Autowired
 	RoleRepository rolerepository;
+	public List<Role> getAll() {
+		return rolerepository.findAll();
+		}
 	
 	
 	public Role getOne(int role_id) {

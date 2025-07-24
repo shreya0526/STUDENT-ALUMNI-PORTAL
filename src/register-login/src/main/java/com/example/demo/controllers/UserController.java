@@ -39,20 +39,16 @@ public class UserController {
 	public List<User> getall(){
 		return user_serv.getAll();
 	}
-<<<<<<< HEAD
-	
-	
-	@PostMapping("/save")
-	public User saveas(@RequestBody UserDummy userdummy) {
-=======
 
+	
+	
 	
 	
 
 	
 	@PostMapping("/register")
 	public User register(@RequestBody UserDummy userdummy) {
->>>>>>> 60ef4250ccbe79105e9bf68ca13612bf859d815e
+
 		Role role=role_serv.getOne(userdummy.getRole_id());
 		City city=city_serv.getOne(userdummy.getCity_id());
 		User user=new User(userdummy.getUser_name(), userdummy.getPassword(),userdummy.getEmail(),userdummy.getPhone_no(),role,city);

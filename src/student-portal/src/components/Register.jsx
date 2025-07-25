@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const RegisterForm = () => {
+const Register = () => {
     const [formData, setFormData] = useState({
         user_name: '',
         email: '',
@@ -177,4 +177,4 @@ const styles = {
     }
 };
 
-export default RegisterForm;
+export default Register;

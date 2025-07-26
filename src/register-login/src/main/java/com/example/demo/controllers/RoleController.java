@@ -12,7 +12,7 @@ import com.example.demo.entities.Role;
 import com.example.demo.services.RoleService;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:5173")
 
 @RestController
 @RequestMapping("/role")

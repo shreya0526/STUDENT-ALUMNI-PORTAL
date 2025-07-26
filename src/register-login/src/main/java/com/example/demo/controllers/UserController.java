@@ -22,7 +22,7 @@ import com.example.demo.services.RoleService;
 import com.example.demo.services.UserService;
 
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -56,9 +56,9 @@ public class UserController {
 		
 	}
 	
-	@GetMapping("/login")
-	public User loginCheck(@RequestParam ("email") String email, @RequestParam("password")String password ) {
-		return user_serv.login(email, password);
+	@PostMapping("/login")
+	public User loginCheck(@RequestBody User user ) {
+		return user_serv.login(user.getEmail(), user.getPassword());
 	}
 	
 	 

@@ -14,11 +14,28 @@ const AlumniDashboard = () => {
           <li className="nav-item mb-2">
             <a className="nav-link text-white" href="#">Dashboard</a>
           </li>
+
+          <li className="nav-item mb-2">
+            <a className="nav-link text-white" href="#">Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Main Content */}
+      <div className="flex-grow-1 p-4">
+        <h2>Welcome alumni, {user?.user_name} 👋</h2>
+        <p>Your email: <strong>{user?.email}</strong></p>
+        <hr />
+        <div>
+          <h5>Your Dashboard Overview</h5>
+          <p>This section can be customized to show announcements, events, alumni mentors, etc.</p>
+        </div>
+      </div>
+    </div>
          
           
           
-      </div>
-    </div>
+      
   );
 };
 

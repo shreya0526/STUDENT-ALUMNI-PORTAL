@@ -59,7 +59,7 @@ const Login = () => {
 
     const roleId = data.role.role_id;
     if (roleId === 1) {
-        navigate('/admindashboard');
+        navigate('/AdminDashboard');
     } else if (roleId === 2) {
         navigate('/alumnidashboard');
     } else if (roleId === 3) {

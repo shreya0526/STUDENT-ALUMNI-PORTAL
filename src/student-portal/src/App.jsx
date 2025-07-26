@@ -4,7 +4,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import AdminDashboard from "./components/AdminDashboard";
 import StudentDashboard from "./components/StudentDashboard";
-//import AlumniDashboard from "./components/AlumniDashboard";
+import AlumniDashboard from "./components/AlumniDashboard";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
       <Route path="/register" element={<Register />} />
       { <Route path="/AdminDashboard" element={<AdminDashboard />} /> }
        <Route path="/StudentDashboard" element={<StudentDashboard />} />
-      {/* <Route path="/alumni-dashboard" element={<AlumniDashboard />} /> */}
+      <Route path="/alumnidashboard" element={<AlumniDashboard />} />
     </Routes>
   );
 }

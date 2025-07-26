@@ -1,18 +1,20 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { useDispatch, useSelector } from'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';  
 import { userAction } from '../store/userSlice';
+
 const Login = () => {
     const [formData, setFormData] = useState({
         email: '',
-        password: '',
+        password: ''
     });
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState('');
-    const loggedInUser = useSelector(store=>store.loggedInUser);
-    console.log('loggedInUser:', loggedInUser);
+    const loggedInUser = useSelector(store => store.loggedInUser);
     const dispatch = useDispatch();
+    const navigate = useNavigate(); 
+
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -24,58 +26,59 @@ const Login = () => {
         e.preventDefault();
         setError('');
         setLoading(true);
-        const params= {
-                    email: formData.email,
-                    password: formData.password
-                }
-        fetch("http://localhost:8080/user/login",{
-            method: 'post',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(params)
-        }).then(response => response.json()).
-        then(data => {
-            dispatch(userAction.setUser(data))
 
-          })
+        const params = {
+            email: formData.email,
+            password: formData.password
+        };
 
-        // try {
-        //     const res = await axios.get('http://localhost:8080/user/login', {
-        //         params: {
-        //             email: formData.email,
-        //             password: formData.password
-        //         }
-        //     });
+      try {
+    const response = await fetch("http://localhost:8080/user/login", {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(params)
+    });
 
-        //     if (!res.data) {
-        //         setError('Invalid email or password');
-        //     } else {
-        //         alert(`✅ Login Successful!\n\nResponse:\n${JSON.stringify(res.data, null, 2)}`);
-        //         dispatch(userAction.setUser(res.data))
-        //         console.log(res.data)
-        //         setFormData({ email: '', password: '' });
-        //     }
-        // } catch (err) {
-        //     if (err.response) {
-        //         const status = err.response.status;
-        //         if (status === 401 || status === 404) {
-        //             setError('Invalid email or password');
-        //         } else {
-        //             setError(err.response.data.message || 'Login failed');
-        //         }
-        //     } else {
-        //         setError('Server not responding. Try again later.');
-        //     }
-        // } finally {
-        //     setLoading(false);
-        // }
-    };
+    if (!response.ok) {
+        let errorMsg = 'Invalid email or password';
+        try {
+            const errorData = await response.json();
+            errorMsg = errorData?.message || errorMsg;
+        } catch (jsonErr) {
+            console.warn("Failed to parse error JSON:", jsonErr);
+        }
+        setError(errorMsg);
+        return;
+    }
+
+    const data = await response.json();
+    console.log("Login response data:", data);
+    dispatch(userAction.setUser(data));
+
+    const roleId = data.role.role_id;
+    if (roleId === 1) {
+        navigate('/admindashboard');
+    } else if (roleId === 2) {
+        navigate('/alumnidashboard');
+    } else if (roleId === 3) {
+        navigate('/StudentDashboard');
+    } else {
+        
+        setError('Unknown role ID. Contact support.');
+    }
+} catch (err) {
+    console.error("Login error:", err);
+    setError('Server error. Try again later.');
+} finally {
+    setLoading(false);
+}
+    }
 
     return (
         <div style={styles.container}>
             <h2>Login</h2>
-
             {error && <p style={styles.error}>{error}</p>}
 
             <form onSubmit={handleSubmit} style={styles.form}>

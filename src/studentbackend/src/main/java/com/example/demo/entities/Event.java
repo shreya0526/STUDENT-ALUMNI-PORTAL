@@ -28,9 +28,6 @@ public class Event {
 	Date date;
 	Timer time;
 	String link;
-	@JsonIgnoreProperties("Event")
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="Alumni_id")
-	Alumni alumni;
+	int alumni_id;
 	String description;
 }

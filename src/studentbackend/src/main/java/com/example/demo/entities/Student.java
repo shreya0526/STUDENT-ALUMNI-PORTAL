@@ -28,10 +28,7 @@ public class Student {
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
 	 int student_id;
 	 
-	 @JsonIgnoreProperties("student")
-	 @OneToOne
-	 @JoinColumn(name="user_id")
-	  User user  ;
+	int user_id;
 	 
 	 @JsonIgnoreProperties("student")
 	 @ManyToOne(cascade=CascadeType.ALL)

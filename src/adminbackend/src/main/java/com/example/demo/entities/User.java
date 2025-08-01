@@ -9,7 +9,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,27 +16,40 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="register_event")
+@Table(name="user")
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
+public class User {
 
-public class RegisterEvent {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int register_id;
-	
-	@ManyToOne
-    @JoinColumn(name = "event_id", nullable = false)
-    @JsonIgnoreProperties("registrations") // Ignore the 'registrations' list in Event
-    private Event event;
-	
-	@ManyToOne
-    @JoinColumn(name = "student_id", nullable = false)
-    @JsonIgnoreProperties("registrations") // Ignore the 'registrations' list in Student
-    private Student student;
+	int user_id;
+	String User_name;
+	String password;
+	String email;
+	String phone_no;
+	int role_id;
 	
 	
+	@JsonIgnoreProperties("user")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="city_id")
+	City city;
 
+	public User(String user_name, String password, String email, String phone_no, int  role_id, City city) {
+		super();
+		User_name = user_name;
+		this.password = password;
+		this.email = email;
+		this.phone_no = phone_no;
+	    this.role_id = role_id;
+		this.city = city;
+	}
+	
+	
+	
+	
 }
+

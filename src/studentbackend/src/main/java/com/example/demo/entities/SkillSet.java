@@ -29,6 +29,6 @@ public class SkillSet {
 	
 	String skill_name;
 	
-	@OneToMany(mappedBy = "skill", cascade = CascadeType.ALL)
+	@OneToMany(mappedBy = "skillset", cascade = CascadeType.ALL)
     Set<StudentSkillSet> studentSkillSets;
 }

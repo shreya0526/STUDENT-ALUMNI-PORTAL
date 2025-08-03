@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,10 +34,19 @@ public class User {
 	int role_id;
 	
 	
+	@OneToOne(mappedBy="user",cascade=CascadeType.ALL)
+	@JsonIgnoreProperties("user")
+	Student student;
+	
 	@JsonIgnoreProperties("user")
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name="city_id")
 	City city;
+	
+	@OneToOne(mappedBy="user" , cascade = CascadeType.ALL)
+	@JsonIgnoreProperties("user")
+	Alumni alumni;
+	
 
 	public User(String user_name, String password, String email, String phone_no, int  role_id, City city) {
 		super();

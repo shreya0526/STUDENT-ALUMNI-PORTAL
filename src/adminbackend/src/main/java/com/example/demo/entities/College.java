@@ -9,6 +9,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -16,26 +18,32 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+
 @Entity
-@Table(name="city")
+@Table(name="college")
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class City {
-
+public class College {
+	
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	int city_id;
+	int college_id;
 	
-	String city_name;
 	
+	@ManyToOne(cascade=CascadeType.ALL)
+	@JoinColumn(name="city_id")
 	@JsonIgnoreProperties("city")
-	@OneToMany(mappedBy="city",cascade=CascadeType.ALL)
-	Set<User> users;
+	City city;
 	
 	
-	@OneToMany(mappedBy="city",cascade= CascadeType.ALL )
-	@JsonIgnoreProperties("city")
-	Set<College> college;
+	String college_name;
+	
+	
+	@OneToMany(mappedBy ="college",cascade=CascadeType.ALL)
+	Set<Student> student;
+	
+
 }

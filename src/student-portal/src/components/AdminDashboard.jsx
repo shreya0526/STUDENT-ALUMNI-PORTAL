@@ -35,6 +35,44 @@ const AdminDashboard = () => {
       fetchAdminProfile();
     }
   };
+   const fetchStudents = () => {
+    setLoading(true);
+    axios.get('http://localhost:8082/student/all')
+      .then((res) => {
+        setStudents(res.data);
+        setLoading(false);
+      })
+      .catch(() => {
+        alert('Failed to fetch students');
+        setLoading(false);
+      });
+  };
+
+  const fetchEvents = () => {
+    setLoading(true);
+    axios.get('http://localhost:8082/event/all')
+      .then((res) => {
+        setEvents(res.data);
+        setLoading(false);
+      })
+      .catch(() => {
+        alert('Failed to fetch events');
+        setLoading(false);
+      });
+  };
+
+  const fetchAlumni = () => {
+    setLoading(true);
+    axios.get('http://localhost:8082/alumni/all')  
+      .then((res) => {
+        setAlumni(res.data);
+        setLoading(false);
+      })
+      .catch(() => {
+        alert('Failed to fetch alumni');
+        setLoading(false);
+      });
+  };
 
    return (
     <div className="d-flex" style={{ minHeight: '100vh' }}>

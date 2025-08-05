@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const Register = () => {
@@ -11,13 +12,15 @@ const Register = () => {
         city_id: '',
     });
 
+    const [errors, setErrors] = useState({});
     const [roles, setRoles] = useState([]);
     const [cities, setCities] = useState([]);
     const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState('');
     const [error, setError] = useState('');
 
-    // Fetch roles and cities
+    const navigate = useNavigate();  // Navigation Hook
+
     useEffect(() => {
         axios.get('http://localhost:8080/role/all')
             .then((res) => setRoles(res.data))
@@ -33,18 +36,62 @@ const Register = () => {
             ...prev,
             [e.target.name]: e.target.value
         }));
+
+        setErrors((prev) => ({
+            ...prev,
+            [e.target.name]: ''  // Clear error when user starts typing
+        }));
+    };
+
+    const validate = () => {
+        const newErrors = {};
+
+        if (!formData.user_name.trim()) {
+            newErrors.user_name = 'Username is required';
+        }
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+            newErrors.email = 'Email is invalid';
+        }
+        if (!formData.password.trim()) {
+            newErrors.password = 'Password is required';
+        } else if (formData.password.length < 6) {
+            newErrors.password = 'Password must be at least 6 characters';
+        }
+        if (!formData.phone_no.trim()) {
+            newErrors.phone_no = 'Phone Number is required';
+        } else if (!/^\d{10}$/.test(formData.phone_no)) {
+            newErrors.phone_no = 'Phone Number must be 10 digits';
+        }
+        if (!formData.role_id) {
+            newErrors.role_id = 'Please select a role';
+        }
+        if (!formData.city_id) {
+            newErrors.city_id = 'Please select a city';
+        }
+
+        setErrors(newErrors);
+
+        return Object.keys(newErrors).length === 0;
     };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true);
         setMessage('');
         setError('');
-        console.log(formData);
-        
+
+        if (!validate()) {
+            return;  // Stop if validation fails
+        }
+
+        setLoading(true);
 
         try {
-            await axios.post('http://localhost:8080/user/register', formData);
+            const response = await axios.post('http://localhost:8080/user/register', formData);
+            
+            const user = response.data;  // Assuming response contains user_id
+
             setMessage('Registration successful!');
             setFormData({
                 user_name: '',
@@ -54,6 +101,12 @@ const Register = () => {
                 role_id: '',
                 city_id: '',
             });
+
+            // Navigate to StudentDetails if role_id === '3'
+            if (formData.role_id === '3') {
+                navigate(`/student-details/${user.user_id}`);
+            }
+
         } catch (err) {
             setError(err.response?.data?.message || 'Registration failed');
         } finally {
@@ -68,7 +121,7 @@ const Register = () => {
             {error && <p style={styles.error}>{error}</p>}
             {message && <p style={styles.success}>{message}</p>}
 
-            <form onSubmit={handleSubmit} style={styles.form}>
+            <form onSubmit={handleSubmit} style={styles.form} noValidate>
                 <input
                     type="text"
                     name="user_name"
@@ -77,6 +130,7 @@ const Register = () => {
                     onChange={handleChange}
                     style={styles.input}
                 />
+                {errors.user_name && <p style={styles.error}>{errors.user_name}</p>}
 
                 <input
                     type="email"
@@ -86,6 +140,7 @@ const Register = () => {
                     onChange={handleChange}
                     style={styles.input}
                 />
+                {errors.email && <p style={styles.error}>{errors.email}</p>}
 
                 <input
                     type="password"
@@ -95,6 +150,7 @@ const Register = () => {
                     onChange={handleChange}
                     style={styles.input}
                 />
+                {errors.password && <p style={styles.error}>{errors.password}</p>}
 
                 <input
                     type="text"
@@ -104,6 +160,7 @@ const Register = () => {
                     onChange={handleChange}
                     style={styles.input}
                 />
+                {errors.phone_no && <p style={styles.error}>{errors.phone_no}</p>}
 
                 <select
                     name="role_id"
@@ -112,11 +169,11 @@ const Register = () => {
                     style={styles.input}
                 >
                     <option value="">Select Role</option>
-                    {roles.map((role) => {
-                        return <option value={role.role_id}>{role.role_name}</option>
-                    }
-                    )}
+                    {roles.map((role) => (
+                        <option key={role.role_id} value={role.role_id}>{role.role_name}</option>
+                    ))}
                 </select>
+                {errors.role_id && <p style={styles.error}>{errors.role_id}</p>}
 
                 <select
                     name="city_id"
@@ -125,12 +182,11 @@ const Register = () => {
                     style={styles.input}
                 >
                     <option value="">Select City</option>
-                    {cities.map((city) => {
-
-                        return <option value={city.city_id}>{city.city_name}</option>
-                    }
-                    )}
+                    {cities.map((city) => (
+                        <option key={city.city_id} value={city.city_id}>{city.city_name}</option>
+                    ))}
                 </select>
+                {errors.city_id && <p style={styles.error}>{errors.city_id}</p>}
 
                 <button type="submit" style={styles.button} disabled={loading}>
                     {loading ? 'Registering...' : 'Register'}
@@ -169,7 +225,8 @@ const styles = {
     },
     error: {
         color: 'red',
-        marginBottom: '10px'
+        fontSize: '14px',
+        marginBottom: '8px'
     },
     success: {
         color: 'green',

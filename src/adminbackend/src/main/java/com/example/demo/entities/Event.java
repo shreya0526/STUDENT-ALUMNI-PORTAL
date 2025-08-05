@@ -1,5 +1,34 @@
 package com.example.demo.entities;
 
-public class Event {
+import java.sql.Time;
+import java.util.Date;
+import java.util.Timer;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Entity
+@Table(name="event")
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+public class Event {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int event_id;
+	String event_name;
+	Date date;
+	String time;
+	String link;
+	int alumni_id;
+	String description;
 }

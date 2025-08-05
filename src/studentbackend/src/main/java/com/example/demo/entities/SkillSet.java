@@ -2,6 +2,8 @@ package com.example.demo.entities;
 
 import java.util.Set;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -28,7 +30,7 @@ public class SkillSet {
 	int skill_id;
 	
 	String skill_name;
-	
+	@JsonIgnoreProperties("skillset")
 	@OneToMany(mappedBy = "skillset", cascade = CascadeType.ALL)
     Set<StudentSkillSet> studentSkillSets;
 }

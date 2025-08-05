@@ -33,16 +33,12 @@ public class StudentSkillSet {
 	    @JoinColumn(name = "student_id")
 	     Student student;
 	    
-	    @JsonIgnoreProperties("student_skillset")
+		 @JsonIgnoreProperties("student_skillset")
 	    @ManyToOne(cascade=CascadeType.ALL)
 	    @JoinColumn(name = "skill_id")
 	    SkillSet skillset;
 
-		public StudentSkillSet(Student student, SkillSet skillset) {
-			super();
-			this.student = student;
-			this.skillset = skillset;
-		}
+		
 	
 	
 }

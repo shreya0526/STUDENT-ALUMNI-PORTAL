@@ -35,15 +35,14 @@ public class College {
 	
 	@ManyToOne(cascade=CascadeType.ALL)
 	@JoinColumn(name="city_id")
-	@JsonIgnoreProperties("city")
+	@JsonIgnoreProperties("college")
 	City city;
 	
 	
 	String college_name;
 	
 	
-	@OneToMany(mappedBy ="college",cascade=CascadeType.ALL)
-	Set<Student> student;
+	
 	
 
 }

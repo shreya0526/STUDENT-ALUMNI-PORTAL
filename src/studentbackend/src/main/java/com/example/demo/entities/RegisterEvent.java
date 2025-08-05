@@ -9,7 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
+
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -28,15 +28,21 @@ public class RegisterEvent {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int register_id;
 	
-	@ManyToOne
-    @JoinColumn(name = "event_id", nullable = false)
-    @JsonIgnoreProperties("registrations") // Ignore the 'registrations' list in Event
+	 @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "event_id")
+    @JsonIgnoreProperties("registrations") 
     private Event event;
 	
-	@ManyToOne
-    @JoinColumn(name = "student_id", nullable = false)
-    @JsonIgnoreProperties("registrations") // Ignore the 'registrations' list in Student
+	 @ManyToOne(cascade=CascadeType.ALL)
+    @JoinColumn(name = "student_id")
+    @JsonIgnoreProperties("registrations")
     private Student student;
+
+	public RegisterEvent(Event event, Student student) {
+		super();
+		this.event = event;
+		this.student = student;
+	}
 	
 	
 

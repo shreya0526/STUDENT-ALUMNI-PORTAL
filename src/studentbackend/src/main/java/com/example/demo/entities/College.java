@@ -2,6 +2,7 @@ package com.example.demo.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,14 +27,14 @@ public class College {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int college_id;
 	
-	@Column(name = "college_name", nullable = false)
-    String collegeName;
+	
+    String college_Name;
 
-    // Foreign key to City table
-    @ManyToOne
-    @JoinColumn(name = "city_id", nullable = false)
-    @JsonIgnoreProperties("colleges") // Prevent infinite recursion
-    City city;
+  
+    @JsonIgnoreProperties("collage")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="city_id")
+	City city;
 	
 	
 	

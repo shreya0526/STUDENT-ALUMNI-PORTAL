@@ -31,12 +31,18 @@ public class Student {
 	 @GeneratedValue(strategy=GenerationType.IDENTITY)
 	 int student_id;
 	 
-	int user_id;
+     int user_id;
 	 
 	 @JsonIgnoreProperties("student")
 	 @ManyToOne(cascade=CascadeType.ALL)
 	 @JoinColumn(name="college_id")
 	 College college;
+
+	public Student(int user_id, College college) {
+		super();
+		this.user_id = user_id;
+		this.college = college;
+	}
 	 
 	 
 	 

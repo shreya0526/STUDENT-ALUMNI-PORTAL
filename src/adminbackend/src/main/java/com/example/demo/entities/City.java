@@ -30,12 +30,8 @@ public class City {
 	
 	String city_name;
 	
-	@JsonIgnoreProperties("city")
-	@OneToMany(mappedBy="city",cascade=CascadeType.ALL)
-	Set<User> users;
 	
 	
-	@OneToMany(mappedBy="city",cascade= CascadeType.ALL )
-	@JsonIgnoreProperties("city")
-	Set<College> college;
+	
+
 }

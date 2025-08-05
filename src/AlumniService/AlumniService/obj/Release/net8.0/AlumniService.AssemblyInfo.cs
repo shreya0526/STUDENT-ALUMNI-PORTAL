@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AlumniService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+171b24e4de0b301fcc5f450dd85afbb872e7ea84")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e6f59ef9334ad3190980cd7f9e3560a992b99303")]
 [assembly: System.Reflection.AssemblyProductAttribute("AlumniService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AlumniService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

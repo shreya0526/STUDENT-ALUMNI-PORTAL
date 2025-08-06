@@ -1,6 +1,6 @@
 package com.example.demo.entities;
 
-import java.util.Set;
+import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -19,33 +19,39 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@NoArgsConstructor
-@AllArgsConstructor
+@Entity
+@Table(name="user")
 @Getter
 @Setter
-@Entity
-@Table(name="student")
-public class Student {
-     
-	 @Id
-	 @GeneratedValue(strategy=GenerationType.IDENTITY)
-	 int student_id;
-	 
-     int user_id;
-	 
-	 @JsonIgnoreProperties("student")
-	 @ManyToOne(cascade=CascadeType.ALL)
-	 @JoinColumn(name="college_id")
-	 College college;
-	 
-	 
+@AllArgsConstructor
+@NoArgsConstructor
+public class User {
 
-	public Student(int user_id, College college) {
-		super();
-		this.user_id = user_id;
-		this.college = college;
-	}
-	 
-	 
-	 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	int user_id;
+	String User_name;
+	String password;
+	String email;
+	String phone_no;
+	int role_id;
+	
+	
+	
+	
+	@JsonIgnoreProperties("user")
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="city_id")
+	City city;
+	
+	
+	
+	
+
+
+	
+	
+	
+	
 }
+

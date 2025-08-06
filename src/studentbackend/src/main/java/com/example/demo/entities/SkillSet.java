@@ -32,5 +32,5 @@ public class SkillSet {
 	String skill_name;
 	@JsonIgnoreProperties("skillset")
 	@OneToMany(mappedBy = "skillset", cascade = CascadeType.ALL)
-    Set<StudentSkillSet> studentSkillSets;
+    private Set<StudentSkillSet> studentSkillSets;
 }

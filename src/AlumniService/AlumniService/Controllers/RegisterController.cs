@@ -41,49 +41,7 @@ namespace alumniService.Controllers
 
         }
 
-        [HttpPost]
-        //        public IActionResult UpdateAlumniExtraData([FromBody] Alumni dto)
-        //        {
-        //            using (var db = new P22AlumniportalContext())
-        //            {
-        //                // Find the alumni
-        //                var alumni = db.Alumni.FirstOrDefault(a => a.AlumniId == dto.AlumniId);
-        //                if (alumni == null)
-        //                {
-        //                    return NotFound($"Alumni with ID {dto.AlumniId} not found.");
-        //                }
-
-        //                // Update Sector and WorkTitle using existing IDs
-        //                alumni.SectorId = dto.SectorId;
-        //                alumni.WorkId = dto.WorkId;
-
-        //                // Remove existing college mappings if any (optional)
-        //                var existingAlumniColleges = db.AlumniColleges
-        //                    .Where(ac => ac.AlumniId == dto.AlumniId)
-        //                    .ToList();
-
-        //                db.AlumniColleges.RemoveRange(existingAlumniColleges);
-
-        //                // Add new college mappings
-        //                foreach (var collegeId in dto.CollegeIds)
-        //                {
-        //                    db.AlumniColleges.Add(new AlumniCollege
-        //                    {
-        //                        AlumniId = dto.AlumniId,
-        //                        CollegeId = collegeId
-        //                    });
-        //                }
-
-        //                db.SaveChanges();
-
-        //                return Ok("Alumni extra data updated successfully.");
-        //            }
-        //        }
-        //    }
-        //}
-
-        [HttpPost]
-
+       
         [HttpPost]
         public IActionResult CreateAlumnus([FromBody] Alumni dto)
         {

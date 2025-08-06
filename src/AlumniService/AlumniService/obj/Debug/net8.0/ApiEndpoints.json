@@ -26,6 +26,64 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "alumniService.Controllers.EventController",
+    "Method": "DeleteEvent",
+    "RelativePath": "api/Event/delete/{eventId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "alumniId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "alumniService.Controllers.EventController",
+    "Method": "GetRegisteredStudentNames",
+    "RelativePath": "api/Event/registered-student-names/{eventId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "alumniService.Controllers.EventController",
+    "Method": "UpdateEvent",
+    "RelativePath": "api/Event/update/{eventId}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "eventId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "updatedEventDto",
+        "Type": "alumniService.DTOs.EventDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "alumniService.Controllers.RegisterController",
     "Method": "GetAlumniDetails",
     "RelativePath": "api/Register",

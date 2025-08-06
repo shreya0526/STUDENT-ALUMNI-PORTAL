@@ -7,7 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.Student;
-
+import com.example.demo.entities.StudentDummyUpdate;
+import com.example.demo.entities.User;
 import com.example.demo.repositories.StudentRepository;
 
 
@@ -16,6 +17,7 @@ public class StudentService {
 
 	@Autowired
 	StudentRepository studentrepository;
+	
 	
 	
 	public List<Student> getAll(){
@@ -33,8 +35,12 @@ public class StudentService {
 				return student;
 	}
 	public Student register(Student student) {
+		
+
 		return studentrepository.save(student);
 	}
 	
 	
 }
+	
+

@@ -4,8 +4,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import AdminDashboard from "./components/AdminDashboard";
 import StudentDashboard from "./components/StudentDashboard";
-import AlumniDashboard from "./components/AlumniDashboard";
 import StudentDetails from "./components/Studentregister";
+import AlumniDashboard from "./components/AluminiDashboard";
 
 function App() {
   return (

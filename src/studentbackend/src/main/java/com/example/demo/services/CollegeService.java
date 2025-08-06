@@ -24,6 +24,7 @@ public class CollegeService {
 		Optional<College> collegs= collegerepository.findById(college_id);
 				try {
 					college= collegs.get();
+					System.out.println("College details "+college);
 				} catch (Exception e) {
 					college=null;
 				}

@@ -3,8 +3,11 @@ package com.example.demo.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,4 +31,14 @@ public class EventController {
 	public Event getOne(@RequestParam("event_id") int event_id) {
 		return eventservice.getOne(event_id);
 	}
+	
+	 @DeleteMapping("/delete/{event_id}")
+	    public ResponseEntity<String> deleteEvent(@PathVariable("event_id") int event_id) {
+	        try {
+	            eventservice.deleteEventById(event_id);
+	            return ResponseEntity.ok("Event deleted successfully.");
+	        } catch (Exception e) {
+	            return ResponseEntity.status(404).body("Event not found.");
+	        }
+	    }
 }

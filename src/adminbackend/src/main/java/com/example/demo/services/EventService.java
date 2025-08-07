@@ -31,5 +31,14 @@ public class EventService {
 				return event;
 	}
 	
+
+    public void deleteEventById(int eventId) {
+        if (eventrepository.existsById(eventId)) {
+            eventrepository.deleteById(eventId);
+        } else {
+            throw new RuntimeException("Event not found with ID: " + eventId);
+        }
+    }
+	
 	
 }

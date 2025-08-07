@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "D:\\C#Projects\\alumniService\\alumniService\\alumniService.csproj": {}
+    "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\alumniService.csproj": {}
   },
   "projects": {
-    "D:\\C#Projects\\alumniService\\alumniService\\alumniService.csproj": {
+    "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\alumniService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\C#Projects\\alumniService\\alumniService\\alumniService.csproj",
+        "projectUniqueName": "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\alumniService.csproj",
         "projectName": "alumniService",
-        "projectPath": "D:\\C#Projects\\alumniService\\alumniService\\alumniService.csproj",
-        "packagesPath": "C:\\Users\\Nandita\\.nuget\\packages\\",
-        "outputPath": "D:\\C#Projects\\alumniService\\alumniService\\obj\\",
+        "projectPath": "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\alumniService.csproj",
+        "packagesPath": "C:\\Users\\shrey\\.nuget\\packages\\",
+        "outputPath": "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Nandita\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\shrey\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -99,7 +99,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

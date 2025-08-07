@@ -28,18 +28,19 @@ public class Alumni {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int alumni_id;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	
+	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "user_id")
 	@JsonIgnoreProperties("alumni")
-	@JoinColumn(name="user_id")
 	User user;
 	
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="sector_id")
 	@JsonIgnoreProperties("alumni")
 	Sector sector;
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="work_id")
 	@JsonIgnoreProperties("alumni")
 	WorkTitle worktitle;

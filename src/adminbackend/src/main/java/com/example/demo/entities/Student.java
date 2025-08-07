@@ -30,21 +30,25 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int student_id;
-
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne(cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "user_id")
 	@JsonIgnoreProperties("student")
-	@JoinColumn(name="user_id")
 	User user;
 	
 	@JsonIgnoreProperties("student")
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	 @JoinColumn(name="college_id")
 	 College college;
 	
-	@JsonIgnoreProperties("student")
-	@OneToMany(mappedBy="student" ,cascade = CascadeType.ALL)
 	
+	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+	@JsonIgnoreProperties("student")
+	List<RegisterEvent> registerEvents;
+	
+	
+	 @OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+	 @JsonIgnoreProperties("student")
 	 List<StudentSkillSet> studentskillset;
 	
 	

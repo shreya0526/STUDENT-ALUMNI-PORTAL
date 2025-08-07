@@ -36,11 +36,20 @@ public class User {
 	String phone_no;
 	int role_id;
 	
+//	
+//	@OneToOne(mappedBy = "user")
+//	@JsonIgnoreProperties("user")
+//	 Student student;
+//	
 	
 	
-	
+//
+//	@OneToOne(mappedBy = "user")
+//	@JsonIgnoreProperties("user")
+//	 Alumni alumni;
+//	
 	@JsonIgnoreProperties("user")
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	@JoinColumn(name="city_id")
 	City city;
 	

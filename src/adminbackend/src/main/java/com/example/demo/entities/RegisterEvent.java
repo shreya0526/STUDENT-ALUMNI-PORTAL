@@ -1,7 +1,6 @@
 package com.example.demo.entities;
 
-
-import java.util.Date;
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,26 +13,26 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
-@Table(name="event")
+
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
-public class Event {
+@AllArgsConstructor
+@Entity
+@Table(name="register_event")
+public class RegisterEvent {
+
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	int register_id;
+	
+	
 	int event_id;
-	String event_name;
-	Date date;
-	String time;
-	String link;
 	
 	
 	@ManyToOne
-	@JoinColumn(name = "alumni_id")
-     Alumni alumni;
+	@JoinColumn(name="student_id")
+	Student student;
 	
 	
-	String description;
 }

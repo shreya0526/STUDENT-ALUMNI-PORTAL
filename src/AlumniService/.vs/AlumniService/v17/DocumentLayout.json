@@ -1,5 +1,67 @@
 {
   "Version": 1,
+<<<<<<< HEAD
+  "WorkspaceRootPath": "C:\\Student-Alumni-Portal\\src\\AlumniService\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\controllers\\eventcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\controllers\\registercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\models\\registerevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\models\\registerevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\models\\p22alumniportalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\models\\p22alumniportalcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\models\\event.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\dtos\\eventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\dtos\\eventdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\dtos\\alumni.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\dtos\\alumni.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\models\\alumnus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\models\\alumnus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\models\\alumnicollege.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\models\\alumnicollege.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\models\\worktitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\models\\worktitle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\models\\sector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\models\\sector.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\models\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\models\\city.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\student-alumni-portal\\src\\alumniservice\\alumniservice\\models\\college.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+=======
   "WorkspaceRootPath": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\",
   "Documents": [
     {
@@ -64,6 +126,7 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|c:\\users\\yatendra\\desktop\\student alumni portal\\student-alumni-portal\\src\\alumniservice\\alumniservice\\models\\college.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
       "RelativeMoniker": "D:0:0:{E5666096-065F-4C98-B805-6DACDE8D1BD3}|alumniService\\alumniService.csproj|solutionrelative:alumniservice\\models\\college.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -126,9 +189,15 @@
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "RegisterEvent.cs",
+<<<<<<< HEAD
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\RegisterEvent.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Models\\RegisterEvent.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\RegisterEvent.cs",
+=======
               "DocumentMoniker": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\RegisterEvent.cs",
               "RelativeDocumentMoniker": "AlumniService\\Models\\RegisterEvent.cs",
               "ToolTip": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\RegisterEvent.cs",
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
               "RelativeToolTip": "AlumniService\\Models\\RegisterEvent.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -138,9 +207,15 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Alumni.cs",
+<<<<<<< HEAD
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\DTOs\\Alumni.cs",
+              "RelativeDocumentMoniker": "AlumniService\\DTOs\\Alumni.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\DTOs\\Alumni.cs",
+=======
               "DocumentMoniker": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\DTOs\\Alumni.cs",
               "RelativeDocumentMoniker": "AlumniService\\DTOs\\Alumni.cs",
               "ToolTip": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\DTOs\\Alumni.cs",
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
               "RelativeToolTip": "AlumniService\\DTOs\\Alumni.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -150,9 +225,15 @@
               "$type": "Document",
               "DocumentIndex": 7,
               "Title": "WorkTitle.cs",
+<<<<<<< HEAD
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\WorkTitle.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Models\\WorkTitle.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\WorkTitle.cs",
+=======
               "DocumentMoniker": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\WorkTitle.cs",
               "RelativeDocumentMoniker": "AlumniService\\Models\\WorkTitle.cs",
               "ToolTip": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\WorkTitle.cs",
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
               "RelativeToolTip": "AlumniService\\Models\\WorkTitle.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -162,13 +243,34 @@
               "$type": "Document",
               "DocumentIndex": 8,
               "Title": "User.cs",
+<<<<<<< HEAD
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\User.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Models\\User.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\User.cs",
+=======
               "DocumentMoniker": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\User.cs",
               "RelativeDocumentMoniker": "AlumniService\\Models\\User.cs",
               "ToolTip": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\User.cs",
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
               "RelativeToolTip": "AlumniService\\Models\\User.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAxwAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-05T12:12:58.719Z"
+<<<<<<< HEAD
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "EventDTO.cs",
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\DTOs\\EventDTO.cs",
+              "RelativeDocumentMoniker": "AlumniService\\DTOs\\EventDTO.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\DTOs\\EventDTO.cs",
+              "RelativeToolTip": "AlumniService\\DTOs\\EventDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAswAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-05T06:25:21.032Z"
+=======
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
             },
             {
               "$type": "Document",
@@ -186,9 +288,15 @@
               "$type": "Document",
               "DocumentIndex": 10,
               "Title": "Alumnus.cs",
+<<<<<<< HEAD
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\Alumnus.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Models\\Alumnus.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\Alumnus.cs",
+=======
               "DocumentMoniker": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\Alumnus.cs",
               "RelativeDocumentMoniker": "AlumniService\\Models\\Alumnus.cs",
               "ToolTip": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\Alumnus.cs",
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
               "RelativeToolTip": "AlumniService\\Models\\Alumnus.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAwwA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -198,9 +306,15 @@
               "$type": "Document",
               "DocumentIndex": 11,
               "Title": "City.cs",
+<<<<<<< HEAD
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\City.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Models\\City.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\City.cs",
+=======
               "DocumentMoniker": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\City.cs",
               "RelativeDocumentMoniker": "AlumniService\\Models\\City.cs",
               "ToolTip": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\City.cs",
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
               "RelativeToolTip": "AlumniService\\Models\\City.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -210,17 +324,61 @@
               "$type": "Document",
               "DocumentIndex": 12,
               "Title": "Event.cs",
+<<<<<<< HEAD
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\Event.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Models\\Event.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\Event.cs",
+=======
               "DocumentMoniker": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\Event.cs",
               "RelativeDocumentMoniker": "AlumniService\\Models\\Event.cs",
               "ToolTip": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\Event.cs",
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
               "RelativeToolTip": "AlumniService\\Models\\Event.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-04T11:45:36.707Z"
+<<<<<<< HEAD
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EventController.cs",
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Controllers\\EventController.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Controllers\\EventController.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Controllers\\EventController.cs",
+              "RelativeToolTip": "AlumniService\\Controllers\\EventController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T11:44:43.404Z",
+              "EditorCaption": ""
+=======
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+<<<<<<< HEAD
+              "Title": "P22AlumniportalContext.cs",
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\P22AlumniportalContext.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Models\\P22AlumniportalContext.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\P22AlumniportalContext.cs",
+              "RelativeToolTip": "AlumniService\\Models\\P22AlumniportalContext.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T11:51:25.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterController.cs",
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Controllers\\RegisterController.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Controllers\\RegisterController.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Controllers\\RegisterController.cs",
+              "RelativeToolTip": "AlumniService\\Controllers\\RegisterController.cs",
+              "ViewState": "AgIAACsAAAAAAAAAAAAQwAoAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-04T11:37:32.639Z"
+=======
               "Title": "EventController.cs",
               "DocumentMoniker": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Controllers\\EventController.cs",
               "RelativeDocumentMoniker": "AlumniService\\Controllers\\EventController.cs",
@@ -241,6 +399,7 @@
               "ViewState": "AgIAABoAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-04T11:51:25.792Z"
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
             },
             {
               "$type": "Document",
@@ -258,9 +417,15 @@
               "$type": "Document",
               "DocumentIndex": 15,
               "Title": "College.cs",
+<<<<<<< HEAD
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\College.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Models\\College.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\College.cs",
+=======
               "DocumentMoniker": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\College.cs",
               "RelativeDocumentMoniker": "AlumniService\\Models\\College.cs",
               "ToolTip": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\College.cs",
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
               "RelativeToolTip": "AlumniService\\Models\\College.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -270,9 +435,15 @@
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "AlumniCollege.cs",
+<<<<<<< HEAD
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\AlumniCollege.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Models\\AlumniCollege.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\AlumniCollege.cs",
+=======
               "DocumentMoniker": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\AlumniCollege.cs",
               "RelativeDocumentMoniker": "AlumniService\\Models\\AlumniCollege.cs",
               "ToolTip": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\AlumniCollege.cs",
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
               "RelativeToolTip": "AlumniService\\Models\\AlumniCollege.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -282,9 +453,15 @@
               "$type": "Document",
               "DocumentIndex": 16,
               "Title": "Program.cs",
+<<<<<<< HEAD
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Program.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Program.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Program.cs",
+=======
               "DocumentMoniker": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Program.cs",
               "RelativeDocumentMoniker": "AlumniService\\Program.cs",
               "ToolTip": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Program.cs",
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
               "RelativeToolTip": "AlumniService\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAABvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -294,9 +471,15 @@
               "$type": "Document",
               "DocumentIndex": 17,
               "Title": "Sector.cs",
+<<<<<<< HEAD
+              "DocumentMoniker": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\Sector.cs",
+              "RelativeDocumentMoniker": "AlumniService\\Models\\Sector.cs",
+              "ToolTip": "C:\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\Sector.cs",
+=======
               "DocumentMoniker": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\Sector.cs",
               "RelativeDocumentMoniker": "AlumniService\\Models\\Sector.cs",
               "ToolTip": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\AlumniService\\AlumniService\\Models\\Sector.cs",
+>>>>>>> 363eda9dc198c72d2da898a39dafc46926017a42
               "RelativeToolTip": "AlumniService\\Models\\Sector.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",

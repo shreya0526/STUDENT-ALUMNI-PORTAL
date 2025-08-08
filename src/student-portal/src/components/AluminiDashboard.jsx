@@ -20,9 +20,17 @@ const AlumniDashboard = () => {
 const dispatch = useDispatch();
 
 const handleLogout = () => {
-  dispatch(userAction.logoutUser()); // You should have an action like this
-  navigate('/'); // Redirect to login route
+  // Clear user from Redux store
+  dispatch(userAction.clearUser());
+
+  // Optionally clear any auth tokens or localStorage if you use
+  // localStorage.removeItem('token');
+
+  // Redirect to login page or home
+  navigate('/');
 };
+
+
 
   const [formData, setFormData] = useState({
     user_id: '',

@@ -1,26 +1,46 @@
+using Steeltoe.Discovery.Client;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Add Steeltoe Discovery Client
+builder.Services.AddDiscoveryClient(builder.Configuration);
 
+// Add controllers
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+// Swagger for API docs
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//builder.Services.AddControllers().AddJsonOptions(x =>
-//    x.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.IgnoreCycles);
-
+// CORS policy to allow React frontend
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowReactApp", builder =>
+    {
+        builder
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+// Use Steeltoe Discovery Client
+app.UseDiscoveryClient();
+
+// Enable Swagger in development
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
+// Enable HTTPS redirection if needed
 app.UseHttpsRedirection();
+
+// Use the CORS policy
+app.UseCors("AllowReactApp");
 
 app.UseAuthorization();
 

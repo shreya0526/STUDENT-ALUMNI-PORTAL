@@ -158,7 +158,7 @@ import axios from 'axios';
 
 const StudentDetails = () => {
     const { userId } = useParams();
-    const navigate = useNavigate(); // ✅ Added navigation hook
+    const navigate = useNavigate(); 
 
     const [colleges, setColleges] = useState([]);
     const [skills, setSkills] = useState([]);
@@ -220,7 +220,7 @@ const StudentDetails = () => {
             await axios.post('http://localhost:8081/student/register', payload);
             setMessage('Student details registered successfully!');
             
-            // ✅ Redirect to login page after 2 seconds
+            
             setTimeout(() => {
                 navigate('/');
             }, 2000);

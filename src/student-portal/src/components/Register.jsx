@@ -361,7 +361,11 @@ const Register = () => {
 
             if (formData.role_id === '3') {
                 navigate(`/student-details/${user.user_id}`);
-            } else {
+
+            } 
+             else if (formData.role_id === '2') {
+                navigate(`/alumni-details/${user.user_id}`);}
+                else {
                 navigate('/');
             }
 

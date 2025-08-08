@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\alumniService.csproj": {}
+    "C:\\Student-Alumni-Portal\\src\\alumniService\\alumniService\\alumniService.csproj": {}
   },
   "projects": {
-    "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\alumniService.csproj": {
+    "C:\\Student-Alumni-Portal\\src\\alumniService\\alumniService\\alumniService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\alumniService.csproj",
+        "projectUniqueName": "C:\\Student-Alumni-Portal\\src\\alumniService\\alumniService\\alumniService.csproj",
         "projectName": "alumniService",
-        "projectPath": "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\alumniService.csproj",
+        "projectPath": "C:\\Student-Alumni-Portal\\src\\alumniService\\alumniService\\alumniService.csproj",
         "packagesPath": "C:\\Users\\shrey\\.nuget\\packages\\",
-        "outputPath": "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\obj\\",
+        "outputPath": "C:\\Student-Alumni-Portal\\src\\alumniService\\alumniService\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -74,6 +74,14 @@
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[8.0.3, )"
+            },
+            "Steeltoe.Discovery.ClientCore": {
+              "target": "Package",
+              "version": "[3.2.8, )"
+            },
+            "Steeltoe.Discovery.Eureka": {
+              "target": "Package",
+              "version": "[3.2.8, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

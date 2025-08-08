@@ -7,7 +7,7 @@ import AdminDashboard from "./components/AdminDashboard";
 import StudentDashboard from "./components/StudentDashboard";
 import StudentDetails from "./components/StudentDetails";
 import AlumniDashboard from "./components/AluminiDashboard";
-
+import AlumniDetails from "./components/AlumniDetails";
 function App() {
   return (
     <Routes>
@@ -17,6 +17,7 @@ function App() {
        <Route path="/StudentDashboard" element={<StudentDashboard />} />
       <Route path="/alumnidashboard" element={<AlumniDashboard />} />
       <Route path="/student-details/:userId" element={<StudentDetails />} />
+      <Route path="/alumni-details/:userId" element={<AlumniDetails />} />
       
     </Routes>
   );

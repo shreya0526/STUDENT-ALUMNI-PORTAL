@@ -48,7 +48,7 @@ const AlumniDashboard = () => {
 
   const fetchProfile = () => {
     setLoading(true);
-    axios.get(`http://localhost:5037/api/Alumni/get-alumni-id-by-userid/${user.user_id}`)
+    axios.get(`http://localhost:5037/Alumni/get-alumni-id-by-userid/${user.user_id}`)
       .then(res => {
         const alumniData = res.data.alumnus;
         setProfile(alumniData);
@@ -69,7 +69,7 @@ const AlumniDashboard = () => {
 
   const fetchPostedEvents = () => {
     setLoading(true);
-    axios.get(`http://localhost:5037/api/Alumni/alumni/${user.user_id}`)
+    axios.get(`http://localhost:5037/Alumni/getevents/${user.user_id}`)
       .then(res => {
         setPostedEvents(res.data);
         setLoading(false);
@@ -136,7 +136,7 @@ const AlumniDashboard = () => {
 
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8082/user/update', formData)
+    axios.put(`http://localhost:5037/Alumni/update`, formData)
       .then(() => {
         alert('Profile updated');
         setEditMode(false);
@@ -152,7 +152,16 @@ const AlumniDashboard = () => {
 
   const handleCreateEventSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5037/api/Event', {
+   let obj = {...createForm,
+    alumniId: user.user_id}
+console.log(obj)
+  // fetch("http://localhost:5037/api/Event",{
+  //   method:"POST",
+  //   headers:{"Content-type":"application/json"},
+  //   body:JSON.stringify(obj)
+  // }).then(alert("Event saved")).catch(alert("Event not saved"))
+
+    axios.post(`http://localhost:5037/api/Event`, {
       ...createForm,
       alumniId: user.user_id
     })
@@ -318,4 +327,4 @@ const AlumniDashboard = () => {
   );
 };
 
-export default AlumniDashboard;
+export default AlumniDashboard;  

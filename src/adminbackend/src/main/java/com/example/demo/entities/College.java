@@ -32,13 +32,10 @@ public class College {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	int college_id;
 	
-	
-	@ManyToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="city_id")
-	@JsonIgnoreProperties("college")
-	City city;
-	
-	
+	 @ManyToOne
+	    @JoinColumn(name = "city_id", nullable = false)
+	    City city;
+	 
 	String college_name;
 	
 	

@@ -1,10 +1,11 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
+
 import Register from "./components/Register";
 import AdminDashboard from "./components/AdminDashboard";
 import StudentDashboard from "./components/StudentDashboard";
-import StudentDetails from "./components/Studentregister";
+import StudentDetails from "./components/StudentDetails";
 import AlumniDashboard from "./components/AluminiDashboard";
 
 function App() {
@@ -20,5 +21,6 @@ function App() {
     </Routes>
   );
 }
+
 
 export default App;

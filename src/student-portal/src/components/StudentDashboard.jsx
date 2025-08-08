@@ -33,7 +33,8 @@ const StudentDashboard = () => {
 
   const fetchStudentProfile = () => {
     setLoading(true);
-    axios.get(`http://localhost:8081/student/getone?student_id=${user.user_id}`)
+   // axios.get(`http://localhost:8081/student/getone?student_id=${user.user_id}`)
+    axios.get(`http://localhost:8081/student/userid/${user.user_id}`)
       .then((res) => {
         setStudentProfile(res.data);
         setFormData({

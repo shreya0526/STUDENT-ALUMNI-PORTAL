@@ -31,7 +31,7 @@ const StudentProfileCard = ({ studentProfile, editMode, formData, handleInputCha
         ) : (
           <>
             <h4>{studentProfile.user.user_name}</h4>
-            <p className="text-muted">Student ID: {studentProfile.student_id}</p>
+          
             <div className="text-start">
               <p><strong>Email:</strong> {studentProfile.user.email}</p>
               <p><strong>Phone:</strong> {studentProfile.user.phone_no}</p>

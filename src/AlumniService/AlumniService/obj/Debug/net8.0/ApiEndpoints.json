@@ -1,5 +1,73 @@
 [
   {
+    "ContainingType": "alumniService.Controllers.AlumniController",
+    "Method": "GetAlumniDetails",
+    "RelativePath": "all",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "alumniService.Controllers.AlumniController",
+    "Method": "GetAlumniIdByUserId",
+    "RelativePath": "Alumni/get-alumni-id-by-userid/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "alumniService.Controllers.AlumniController",
+    "Method": "GetEventsByAlumni",
+    "RelativePath": "Alumni/getevents/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[alumniService.DTOs.EventDTO, alumniService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "alumniService.Controllers.AlumniController",
+    "Method": "UpdateAlumnusByAlumniId",
+    "RelativePath": "Alumni/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "alumniService.DTOs.AlumniUpdateDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "alumniService.Controllers.EventController",
     "Method": "GetEventsWithAlumniInfo",
     "RelativePath": "api/Event",
@@ -37,11 +105,6 @@
         "Name": "eventId",
         "Type": "System.Int32",
         "IsRequired": true
-      },
-      {
-        "Name": "alumniId",
-        "Type": "System.Int32",
-        "IsRequired": false
       }
     ],
     "ReturnTypes": []
@@ -84,19 +147,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "alumniService.Controllers.RegisterController",
-    "Method": "GetAlumniDetails",
-    "RelativePath": "api/Register",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "alumniService.Controllers.RegisterController",
+    "ContainingType": "alumniService.Controllers.AlumniController",
     "Method": "CreateAlumnus",
-    "RelativePath": "api/Register",
+    "RelativePath": "register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,

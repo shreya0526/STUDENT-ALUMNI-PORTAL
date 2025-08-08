@@ -1,11 +1,13 @@
 ﻿using alumniService.DTOs;
 using alumniService.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace alumniService.Controllers
 {
+    
     [Route("api/[controller]")]
     [ApiController]
     public class EventController : ControllerBase
@@ -103,13 +105,13 @@ namespace alumniService.Controllers
 
 
         [HttpDelete("delete/{eventId}")]
-        public IActionResult DeleteEvent(int eventId, [FromQuery] int alumniId)
+        public IActionResult DeleteEvent(int eventId)
         {
             using (var db = new P22AlumniportalContext())
             {
                 // Step 1: Find the event
                 var existingEvent = db.Events
-                    .FirstOrDefault(e => e.EventId == eventId && e.AlumniId == alumniId);
+                    .FirstOrDefault(e => e.EventId == eventId);
 
                 if (existingEvent == null)
                 {

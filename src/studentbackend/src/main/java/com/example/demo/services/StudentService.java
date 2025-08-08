@@ -40,6 +40,10 @@ public class StudentService {
 		return studentrepository.save(student);
 	}
 	
+
+    public Student getByUserId(int user_id) {
+        return studentrepository.findStudentByUserId(user_id);
+    }
 	
 }
 	

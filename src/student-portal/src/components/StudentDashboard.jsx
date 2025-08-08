@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import StudentSidebar from './StudentSidebar';
 import StudentProfileCard from './StudentProfileCard';
 import StudentEventList from './StudentEventList';
 import StudentRegisteredEvents from './StudentRegisteredEvents';
 
-
 const StudentDashboard = () => {
   const user = useSelector((state) => state.loggedInUser);
+  const navigate = useNavigate();
+
   const [activeSection, setActiveSection] = useState('dashboard');
   const [events, setEvents] = useState([]);
   const [studentProfile, setStudentProfile] = useState(null);
@@ -24,17 +26,29 @@ const StudentDashboard = () => {
     phone_no: ''
   });
 
+  // Redirect to login if user is not logged in
+  useEffect(() => {
+    if (!user) {
+      navigate('/');
+    }
+  }, [user, navigate]);
+
   useEffect(() => {
     if (user?.user_id) {
       fetchStudentProfile();
-      fetchRegisteredEvents();
     }
   }, [user]);
+
+  useEffect(() => {
+    if (studentProfile?.student_id) {
+      fetchRegisteredEvents(studentProfile.student_id);
+    }
+  }, [studentProfile]);
 
   const fetchStudentProfile = () => {
     setLoading(true);
     axios.get(`http://localhost:8081/student/userid/${user.user_id}`)
-      .then((res) => {
+      .then(res => {
         setStudentProfile(res.data);
         setFormData({
           user_id: res.data.user.user_id,
@@ -54,7 +68,7 @@ const StudentDashboard = () => {
   const fetchEvents = () => {
     setLoading(true);
     axios.get('http://localhost:8081/event/all')
-      .then((res) => {
+      .then(res => {
         setEvents(res.data);
         setLoading(false);
       })
@@ -64,10 +78,10 @@ const StudentDashboard = () => {
       });
   };
 
-  const fetchRegisteredEvents = () => {
+  const fetchRegisteredEvents = (studentId) => {
     setLoading(true);
-    axios.get(`http://localhost:8081/registerevent/registeredevents?student_id=${user.user_id}`)
-      .then((res) => {
+    axios.get(`http://localhost:8081/registerevent/registeredevents?student_id=${studentId}`)
+      .then(res => {
         setRegisteredEvents(res.data);
         const registeredEventIds = res.data.map(item => item.event.event_id);
         setJoinedEvents(registeredEventIds);
@@ -84,13 +98,16 @@ const StudentDashboard = () => {
     if (section === 'events') {
       fetchEvents();
     } else if (section === 'registeredEvents') {
-      fetchRegisteredEvents();
+      if (studentProfile?.student_id) {
+        fetchRegisteredEvents(studentProfile.student_id);
+      }
     } else if (section === 'dashboard') {
       fetchStudentProfile();
     }
   };
 
   const handleJoinEvent = (eventId) => {
+    if (!studentProfile?.student_id) return;
     const payload = {
       student_id: studentProfile.student_id,
       event_id: eventId
@@ -99,14 +116,14 @@ const StudentDashboard = () => {
     axios.post('http://localhost:8081/registerevent/save', payload)
       .then(() => {
         alert('Successfully joined event');
-        setJoinedEvents((prev) => [...prev, eventId]);
+        setJoinedEvents(prev => [...prev, eventId]);
       })
       .catch(() => alert('Failed to join event'));
   };
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   const handleUpdateSubmit = (e) => {
@@ -155,7 +172,6 @@ const StudentDashboard = () => {
             loading={loading}
           />
         )}
-
       </div>
     </div>
   );

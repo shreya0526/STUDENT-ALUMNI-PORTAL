@@ -1,32 +1,29 @@
+
 // import { createSlice } from "@reduxjs/toolkit";
 
-// const userSlice=createSlice({
-//     name: 'user',
-//     initialState: [],
-//     reducers: {
-//         setUser: (state, action) => {
-//             return action.payload;
-//         },
-//     },
+// const userSlice = createSlice({
+//   name: "loggedInUser",
+//   initialState: null, // single user object or null
+//   reducers: {
+//     setUser: (state, action) => action.payload,
+//     clearUser: () => null,  // Clear user on logout
+//   },
 // });
 
-// export const  userAction = userSlice.actions;
+// export const userAction = userSlice.actions;
 // export default userSlice;
 
 
+// store/userSlice.js
 import { createSlice } from "@reduxjs/toolkit";
 
 const userSlice = createSlice({
-    name: 'loggedInUser',
-    initialState: null,  // null is better than [] for a single user object
-    reducers: {
-        setUser: (state, action) => {
-            return action.payload;
-        },
-        clearUser: () => {
-            return null; // reset user data
-        }
-    },
+  name: "loggedInUser",
+  initialState: null, // single user object or null
+  reducers: {
+    setUser: (state, action) => action.payload,
+    clearUser: () => null,  // Clear user on logout
+  },
 });
 
 export const userAction = userSlice.actions;

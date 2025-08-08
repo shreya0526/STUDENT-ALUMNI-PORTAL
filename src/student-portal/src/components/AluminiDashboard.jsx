@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { userAction } from '../store/userSlice'; 
 
 const AlumniDashboard = () => {
   const user = useSelector((state) => state.loggedInUser);
@@ -10,7 +13,16 @@ const AlumniDashboard = () => {
   const [postedEvents, setPostedEvents] = useState([]);
   const [loading, setLoading] = useState(false);
   const [editMode, setEditMode] = useState(false);
-  const [editEventId, setEditEventId] = useState(null); // currently editing event
+  const [editEventId, setEditEventId] = useState(null);
+
+
+  const navigate = useNavigate();
+const dispatch = useDispatch();
+
+const handleLogout = () => {
+  dispatch(userAction.logoutUser()); // You should have an action like this
+  navigate('/'); // Redirect to login route
+};
 
   const [formData, setFormData] = useState({
     user_id: '',
@@ -38,6 +50,9 @@ const AlumniDashboard = () => {
     description: '',
     alumniId: user?.user_id || ''
   });
+
+  const [showRegisteredStudents, setShowRegisteredStudents] = useState(false);
+  const [registeredStudents, setRegisteredStudents] = useState([]);
 
   useEffect(() => {
     if (user?.user_id) {
@@ -94,7 +109,6 @@ const AlumniDashboard = () => {
   const handleEditEvent = (event) => {
     setEditEventId(event.eventId);
     setEditEventForm({
-      
       eventId: event.eventId,
       eventName: event.eventName,
       date: event.date.split('T')[0],
@@ -103,7 +117,6 @@ const AlumniDashboard = () => {
       description: event.description,
       alumniId: user.user_id
     });
-    
   };
 
   const handleUpdateEventChange = (e) => {
@@ -113,7 +126,6 @@ const AlumniDashboard = () => {
 
   const handleUpdateEventSubmit = (e) => {
     e.preventDefault();
-    console.log(editEventForm);
     axios.put(`http://localhost:5037/api/Event/update/${editEventForm.eventId}`, editEventForm)
       .then(() => {
         alert('Event updated successfully');
@@ -152,33 +164,31 @@ const AlumniDashboard = () => {
 
   const handleCreateEventSubmit = (e) => {
     e.preventDefault();
-   let obj = {...createForm,
-    alumniId: user.user_id}
-console.log(obj)
-  // fetch("http://localhost:5037/api/Event",{
-  //   method:"POST",
-  //   headers:{"Content-type":"application/json"},
-  //   body:JSON.stringify(obj)
-  // }).then(alert("Event saved")).catch(alert("Event not saved"))
-
-    axios.post(`http://localhost:5037/api/Event`, {
-      ...createForm,
-      alumniId: user.user_id
+    let obj = { ...createForm, alumniId: user.user_id };
+    fetch("http://localhost:5037/api/Event", {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(obj)
     })
       .then(() => {
-        alert('Event created');
-        setCreateForm({
-          eventName: '',
-          date: '',
-          time: '',
-          link: '',
-          description: '',
-          alumniId: user.user_id
-        });
+        alert("Event saved");
         fetchPostedEvents();
         setActiveSection('postedEvents');
       })
-      .catch(() => alert('Failed to create event'));
+      .catch(() => alert("Event not saved"));
+  };
+
+  // ✅ Connects to backend to fetch registered students
+  const fetchRegisteredStudents = (eventId) => {
+    axios.get(`http://localhost:5037/api/Event/registered-student-names${eventId}`)
+      .then(res => {
+        setRegisteredStudents(res.data);
+        setShowRegisteredStudents(true);
+      })
+      .catch(() => {
+        alert("Failed to fetch registered students");
+        setShowRegisteredStudents(false);
+      });
   };
 
   return (
@@ -196,6 +206,9 @@ console.log(obj)
           <li className="nav-item mb-2">
             <button className="btn btn-link text-white" onClick={() => handleSectionChange('createEvent')}>Create Event</button>
           </li>
+           <li className="nav-item mt-4">
+      <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+    </li>
         </ul>
       </div>
 
@@ -255,6 +268,7 @@ console.log(obj)
                     <th>Link</th>
                     <th>Description</th>
                     <th>Actions</th>
+                    <th>Registered Students</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -270,10 +284,13 @@ console.log(obj)
                           <button className="btn btn-sm btn-warning me-2" onClick={() => handleEditEvent(event)}>Update</button>
                           <button className="btn btn-sm btn-danger" onClick={() => handleDeleteEvent(event.eventId)}>Delete</button>
                         </td>
+                        <td>
+                          <button className="btn btn-sm btn-info" onClick={() => fetchRegisteredStudents(event.eventId)}>View</button>
+                        </td>
                       </tr>
                       {editEventId === event.eventId && (
                         <tr>
-                          <td colSpan="6">
+                          <td colSpan="7">
                             <form onSubmit={handleUpdateEventSubmit}>
                               <div className="row g-2">
                                 <div className="col-md-4">
@@ -305,6 +322,27 @@ console.log(obj)
                 </tbody>
               </table>
             )}
+
+            {/* Registered Students Section */}
+            {showRegisteredStudents && (
+              <div className="card mt-3" style={{ maxWidth: '500px' }}>
+                <div className="card-header d-flex justify-content-between">
+                  <strong>Registered Students</strong>
+                  <button className="btn-close" onClick={() => setShowRegisteredStudents(false)}></button>
+                </div>
+                <div className="card-body">
+                  {registeredStudents.length === 0 ? (
+                    <p>No students registered for this event.</p>
+                  ) : (
+                    <ul className="list-group">
+                      {registeredStudents.map((name, idx) => (
+                        <li key={idx} className="list-group-item">{name}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            )}
           </div>
         )}
 
@@ -327,4 +365,4 @@ console.log(obj)
   );
 };
 
-export default AlumniDashboard;  
+export default AlumniDashboard;

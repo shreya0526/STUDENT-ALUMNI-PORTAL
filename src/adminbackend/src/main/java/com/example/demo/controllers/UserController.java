@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entities.User;
 import com.example.demo.services.UserService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/admin/user")
 public class UserController {
 	@Autowired
 	UserService userservice;
@@ -24,7 +24,7 @@ public class UserController {
 		return userservice.getall();
 	}
 	@GetMapping("/getone")
-	public User getone(@RequestParam("user_id")int user_id) {
+	public User getone(@RequestParam("user_id") int user_id) {
 		return userservice.getOne(user_id);
 	}
 	

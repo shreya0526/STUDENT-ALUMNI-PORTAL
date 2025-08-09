@@ -14,9 +14,9 @@ import com.example.demo.entities.RegisterEvent;
 import com.example.demo.entities.Student;
 import com.example.demo.services.RegisterEventService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/registerevent")
+@RequestMapping("admin/registerevent")
 public class RegisterEventController {
 	
 	@Autowired

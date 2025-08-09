@@ -276,11 +276,11 @@ const Register = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        axios.get('http://localhost:8080/role/all')
+        axios.get('http://localhost:8080/registerlogin/role/all')
             .then((res) => setRoles(res.data))
             .catch(() => setError('Failed to load roles'));
 
-        axios.get('http://localhost:8080/city/all')
+        axios.get('http://localhost:8080/registerlogin/city/all')
             .then((res) => setCities(res.data))
             .catch(() => setError('Failed to load cities'));
     }, []);
@@ -345,7 +345,7 @@ const Register = () => {
         setLoading(true);
 
         try {
-            const response = await axios.post('http://localhost:8080/user/register', formData);
+            const response = await axios.post('http://localhost:8080/registerlogin/user/register', formData);
             const user = response.data;
 
             setMessage('Registration successful!');

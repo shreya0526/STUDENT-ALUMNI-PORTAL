@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entities.SkillSet;
 import com.example.demo.services.SkillSetService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/skillset")
+@RequestMapping("/student/skillset")
 public class SkillSetController {
 	@Autowired
 	SkillSetService skillsetservice ;

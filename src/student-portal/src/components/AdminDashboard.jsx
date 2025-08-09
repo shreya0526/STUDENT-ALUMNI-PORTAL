@@ -45,7 +45,7 @@ const handleCollegeInputChange = (e) => {
       return;
     }
 
-    axios.post('http://localhost:8082/college/save', newCollege)
+    axios.post('http://localhost:8080/admin/college/save', newCollege)
       .then(() => {
         alert('College added successfully');
         setShowCollegeForm(false);
@@ -62,7 +62,7 @@ const handleCollegeInputChange = (e) => {
   }, [user]);
 
   const fetchAdminProfile = () => {
-    axios.get(`http://localhost:8082/user/getone?user_id=${user.user_id}`)
+    axios.get(`http://localhost:8080/admin/user/getone?user_id=${user.user_id}`)
       .then((res) => setAdminProfile(res.data))
       .catch(() => alert('Failed to fetch admin profile'));
   };
@@ -89,7 +89,7 @@ const handleCollegeInputChange = (e) => {
 
 
 const fetchRegisteredStudents = (eventId) => {
-  axios.get(`http://localhost:8082/registerevent/registerstudent/${eventId}`)
+  axios.get(`http://localhost:8080/admin/registerevent/registerstudent/${eventId}`)
     .then((res) => setRegisteredStudents(res.data))
     .catch(() => alert('Failed to fetch registered students'));
 };
@@ -97,7 +97,7 @@ const fetchRegisteredStudents = (eventId) => {
 
   const fetchStudents = () => {
     setLoading(true);
-    axios.get('http://localhost:8082/student/all')
+    axios.get('http://localhost:8080/admin/student/all')
       .then((res) => {
         setStudents(res.data);
         setLoading(false);
@@ -110,7 +110,7 @@ const fetchRegisteredStudents = (eventId) => {
 
   const fetchEvents = () => {
     setLoading(true);
-    axios.get('http://localhost:8082/event/all')
+    axios.get('http://localhost:8080/admin/event/all')
       .then((res) => {
         setEvents(res.data);
         setLoading(false);
@@ -123,7 +123,9 @@ const fetchRegisteredStudents = (eventId) => {
 
   const fetchAlumni = () => {
     setLoading(true);
-    axios.get('http://localhost:8082/alumni/all')
+
+    axios.get('http://localhost:8080/admin/alumni/all')  
+
       .then((res) => {
         setAlumni(res.data);
         setLoading(false);
@@ -135,7 +137,7 @@ const fetchRegisteredStudents = (eventId) => {
   };
 
   const fetchColleges = () => {
-  axios.get('http://localhost:8082/college/all')
+  axios.get('http://localhost:8080/admin/college/all')
     .then(response => {
       setColleges(response.data);
     })
@@ -144,7 +146,7 @@ const fetchRegisteredStudents = (eventId) => {
     });
 };
 const fetchCities = () => {
-  axios.get('http://localhost:8082/city/all')
+  axios.get('http://localhost:8080/admin/city/all')
     .then((res) => setCities(res.data))
     .catch(() => alert('Failed to fetch cities'));
 };
@@ -152,7 +154,7 @@ const fetchCities = () => {
 
   const handleDeleteStudent = (studentId) => {
     if (window.confirm('Are you sure you want to delete this student?')) {
-      axios.delete(`http://localhost:8082/student/delete/${studentId}`)
+      axios.delete(`http://localhost:8080/admin/student/delete/${studentId}`)
         .then(() => {
           alert('Student deleted successfully');
           fetchStudents(); // Refresh the student list
@@ -164,7 +166,7 @@ const fetchCities = () => {
   };
 const handleDeleteAlumni = (alumniId) => {
   if (window.confirm('Are you sure you want to delete this alumni?')) {
-    axios.delete(`http://localhost:8082/alumni/delete/${alumniId}`)
+    axios.delete(`http://localhost:8080/admin/alumni/delete/${alumniId}`)
       .then(() => {
         alert('Alumni deleted successfully');
         fetchAlumni(); // Refresh the alumni list
@@ -176,7 +178,7 @@ const handleDeleteAlumni = (alumniId) => {
 };
 const handleDeleteEvent = (eventId) => {
   if (window.confirm('Are you sure you want to delete this event?')) {
-    axios.delete(`http://localhost:8082/event/delete/${eventId}`)
+    axios.delete(`http://localhost:8080/admin/event/delete/${eventId}`)
       .then(() => {
         alert('Event deleted successfully');
         fetchEvents(); // Refresh event list

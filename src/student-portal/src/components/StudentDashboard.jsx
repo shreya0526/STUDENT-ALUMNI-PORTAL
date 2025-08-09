@@ -47,8 +47,11 @@ const StudentDashboard = () => {
 
   const fetchStudentProfile = () => {
     setLoading(true);
-    axios.get(`http://localhost:8081/student/userid/${user.user_id}`)
+
+    axios.get(`http://localhost:8080/student/student/userid/${user.user_id}`)
       .then(res => {
+
+    
         setStudentProfile(res.data);
         setFormData({
           user_id: res.data.user.user_id,
@@ -67,8 +70,10 @@ const StudentDashboard = () => {
 
   const fetchEvents = () => {
     setLoading(true);
-    axios.get('http://localhost:8081/event/all')
-      .then(res => {
+
+    axios.get('http://localhost:8080/student/event/all')
+      .then((res) => {
+
         setEvents(res.data);
         setLoading(false);
       })
@@ -80,8 +85,12 @@ const StudentDashboard = () => {
 
   const fetchRegisteredEvents = (studentId) => {
     setLoading(true);
-    axios.get(`http://localhost:8081/registerevent/registeredevents?student_id=${studentId}`)
+
+    axios.get(`http://localhost:8080/student/registerevent/registeredevents?student_id=${studentId}`)
       .then(res => {
+
+    
+
         setRegisteredEvents(res.data);
         const registeredEventIds = res.data.map(item => item.event.event_id);
         setJoinedEvents(registeredEventIds);
@@ -113,7 +122,7 @@ const StudentDashboard = () => {
       event_id: eventId
     };
 
-    axios.post('http://localhost:8081/registerevent/save', payload)
+    axios.post('http://localhost:8080/student/registerevent/save', payload)
       .then(() => {
         alert('Successfully joined event');
         setJoinedEvents(prev => [...prev, eventId]);
@@ -128,7 +137,7 @@ const StudentDashboard = () => {
 
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8081/student/update', formData)
+    axios.post('http://localhost:8080/student/student/update', formData)
       .then(() => {
         alert('Profile updated successfully');
         setEditMode(false);

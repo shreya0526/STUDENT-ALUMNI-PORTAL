@@ -13,9 +13,9 @@ import com.example.demo.entities.City;
 import com.example.demo.services.CityService;
 
 
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/city")
+@RequestMapping("/registerlogin/city")
 public class CityController {
 
 	

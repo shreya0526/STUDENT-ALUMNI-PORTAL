@@ -16,9 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entities.Event;
 import com.example.demo.services.EventService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("event")
+@RequestMapping("/admin/event")
 public class EventController {
 	@Autowired
 	EventService eventservice;

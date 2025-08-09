@@ -12,7 +12,7 @@ import com.example.demo.entities.User;
 import com.example.demo.services.UserService;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/student/user")
 public class UserController {
 	@Autowired
 	UserService userservice;

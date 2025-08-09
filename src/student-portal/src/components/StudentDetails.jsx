@@ -170,11 +170,11 @@ const StudentDetails = () => {
     const [error, setError] = useState('');
 
     useEffect(() => {
-        axios.get('http://localhost:8081/college/all')
+        axios.get('http://localhost:8080/student/college/all')
             .then((res) => setColleges(res.data))
             .catch(() => setError('Failed to load colleges'));
 
-        axios.get('http://localhost:8081/skillset/all')
+        axios.get('http://localhost:8080/student/skillset/all')
             .then((res) => setSkills(res.data))
             .catch(() => setError('Failed to load skills'));
     }, []);
@@ -217,7 +217,7 @@ const StudentDetails = () => {
         };
 
         try {
-            await axios.post('http://localhost:8081/student/register', payload);
+            await axios.post('http://localhost:8080/student/student/register', payload);
             setMessage('Student details registered successfully!');
             
             

@@ -151,18 +151,6 @@
         }
       }
     },
-    "/api/College": {
-      "get": {
-        "tags": [
-          "College"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/api/Event": {
       "get": {
         "tags": [
@@ -292,18 +280,6 @@
         }
       }
     },
-    "/api/Sector": {
-      "get": {
-        "tags": [
-          "Sector"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      }
-    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -339,18 +315,6 @@
                 }
               }
             }
-          }
-        }
-      }
-    },
-    "/api/WorkTitle": {
-      "get": {
-        "tags": [
-          "WorkTitle"
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
           }
         }
       }

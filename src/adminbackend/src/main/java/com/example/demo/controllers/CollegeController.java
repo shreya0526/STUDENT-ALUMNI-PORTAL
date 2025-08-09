@@ -15,7 +15,7 @@ import com.example.demo.entities.CollegeDummy;
 import com.example.demo.services.CollegeService;
 
 
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/admin/college")
 public class CollegeController {

@@ -1,36 +1,25 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { userAction } from '../store/userSlice'; 
 
 const AlumniDashboard = () => {
   const user = useSelector((state) => state.loggedInUser);
   const [activeSection, setActiveSection] = useState('dashboard');
-
   const [profile, setProfile] = useState(null);
   const [postedEvents, setPostedEvents] = useState([]);
   const [loading, setLoading] = useState(false);
   const [editMode, setEditMode] = useState(false);
   const [editEventId, setEditEventId] = useState(null);
 
-
   const navigate = useNavigate();
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-const handleLogout = () => {
-  // Clear user from Redux store
-  dispatch(userAction.clearUser());
-
-  // Optionally clear any auth tokens or localStorage if you use
-  // localStorage.removeItem('token');
-
-  // Redirect to login page or home
-  navigate('/');
-};
-
-
+  const handleLogout = () => {
+    dispatch(userAction.clearUser());
+    navigate('/');
+  };
 
   const [formData, setFormData] = useState({
     user_id: '',
@@ -120,7 +109,7 @@ const handleLogout = () => {
       eventId: event.eventId,
       eventName: event.eventName,
       date: event.date.split('T')[0],
-      time: event.time,
+      time: event.time.length === 5 ? event.time + ":00" : event.time,
       link: event.link,
       description: event.description,
       alumniId: user.user_id
@@ -129,12 +118,27 @@ const handleLogout = () => {
 
   const handleUpdateEventChange = (e) => {
     const { name, value } = e.target;
-    setEditEventForm(prev => ({ ...prev, [name]: value }));
+    let newValue = value;
+
+    // Auto-format time on edit
+    if (name === "time" && value.length === 5) {
+      newValue = value + ":00";
+    }
+
+    setEditEventForm(prev => ({ ...prev, [name]: newValue }));
   };
 
   const handleUpdateEventSubmit = (e) => {
     e.preventDefault();
-    axios.put(`http://localhost:5037/api/Event/update/${editEventForm.eventId}`, editEventForm)
+
+    let formattedTime = editEventForm.time;
+    if (formattedTime && formattedTime.length === 5) {
+      formattedTime += ":00";
+    }
+
+    const updatedEvent = { ...editEventForm, time: formattedTime };
+
+    axios.put(`http://localhost:5037/api/Event/update/${editEventForm.eventId}`, updatedEvent)
       .then(() => {
         alert('Event updated successfully');
         setEditEventId(null);
@@ -155,28 +159,59 @@ const handleLogout = () => {
   };
 
   const handleUpdateSubmit = (e) => {
-    e.preventDefault();
-    axios.put(`http://localhost:5037/Alumni/update`, formData)
-      .then(() => {
-        alert('Profile updated');
-        setEditMode(false);
-        fetchProfile();
-      })
-      .catch(() => alert('Update failed'));
+  e.preventDefault();
+
+  const updatedData = {
+    alumniId: profile?.userId, // From fetched profile
+    userName: formData.user_name,
+    password: formData.password,
+    email: formData.email,
+    phoneNo: formData.phone_no,
+    sectorId: profile?.sectorId || 0, // Keep same or update later
+    workId: profile?.workId || 0      // Keep same or update later
   };
+    console.log(updatedData);
+  axios.put(`http://localhost:5037/Alumni/update`, updatedData)
+    .then(() => {
+      alert('Profile updated');
+      setEditMode(false);
+      fetchProfile();
+    })
+    .catch(() => alert('Update failed'));
+};
 
   const handleCreateEventChange = (e) => {
     const { name, value } = e.target;
-    setCreateForm(prev => ({ ...prev, [name]: value }));
+    let newValue = value;
+
+    // Auto-format time on create
+    if (name === "time" && value.length === 5) {
+      newValue = value + ":00";
+    }
+
+    setCreateForm(prev => ({ ...prev, [name]: newValue }));
   };
 
   const handleCreateEventSubmit = (e) => {
     e.preventDefault();
-    let obj = { ...createForm, alumniId: user.user_id };
+
+    let formattedTime = createForm.time;
+    if (formattedTime && formattedTime.length === 5) {
+      formattedTime += ":00";
+    }
+
+    let obj = { 
+      ...createForm, 
+      alumniId: user.user_id,
+      time: formattedTime 
+    };
+
+    console.log(JSON.stringify(obj));
+
     fetch("http://localhost:5037/api/Event", {
       method: "POST",
       headers: { "Content-type": "application/json" },
-      body: JSON.stringify(obj)
+      body: JSON.stringify(obj),
     })
       .then(() => {
         alert("Event saved");
@@ -186,9 +221,8 @@ const handleLogout = () => {
       .catch(() => alert("Event not saved"));
   };
 
-  // ✅ Connects to backend to fetch registered students
   const fetchRegisteredStudents = (eventId) => {
-    axios.get(`http://localhost:5037/api/Event/registered-student-names${eventId}`)
+    axios.get(`http://localhost:5037/api/Event/registered-student-names/${eventId}`)
       .then(res => {
         setRegisteredStudents(res.data);
         setShowRegisteredStudents(true);
@@ -214,9 +248,9 @@ const handleLogout = () => {
           <li className="nav-item mb-2">
             <button className="btn btn-link text-white" onClick={() => handleSectionChange('createEvent')}>Create Event</button>
           </li>
-           <li className="nav-item mt-4">
-      <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
-    </li>
+          <li className="nav-item mt-4">
+            <button className="btn btn-danger" onClick={handleLogout}>Logout</button>
+          </li>
         </ul>
       </div>
 
@@ -374,5 +408,3 @@ const handleLogout = () => {
 };
 
 export default AlumniDashboard;
-
-

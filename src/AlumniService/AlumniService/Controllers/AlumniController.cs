@@ -144,7 +144,7 @@ namespace alumniService.Controllers
                 // Step 1: Find the alumnus using alumniId
                 var alumnus = db.Alumni
                     .Include(a => a.User)
-                    .FirstOrDefault(a => a.AlumniId == dto.AlumniId);
+                    .FirstOrDefault(a => a.UserId == dto.AlumniId);
 
             if (alumnus == null)
                 return NotFound("Alumnus not found");
@@ -159,31 +159,16 @@ namespace alumniService.Controllers
             }
 
             // Step 3: Update sectorId and workId in Alumnus
-            alumnus.SectorId = dto.SectorId;
-            alumnus.WorkId = dto.WorkId;
+            //alumnus.SectorId = dto.SectorId;
+            //alumnus.WorkId = dto.WorkId;
 
             // Step 4: Save changes
             db.SaveChanges();
 
             return Ok("Alumnus and user details updated successfully");
+
+         
+            }
         }
-
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }

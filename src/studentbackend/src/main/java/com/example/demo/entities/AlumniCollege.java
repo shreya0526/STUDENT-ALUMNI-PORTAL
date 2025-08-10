@@ -1,19 +1,16 @@
 package com.example.demo.entities;
 
-import java.util.Set;
-
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
-import jakarta.annotation.Generated;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -21,34 +18,27 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Setter
+@Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
-@Table(name="alumni")
-public class Alumni {
+@Table(name="alumni_college")
+public class AlumniCollege {
 
-	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	int alumni_id;
-	
-	 
-	 @OneToOne(cascade=CascadeType.ALL)
-	 @JoinColumn(name="user_id")
-	 @JsonIgnoreProperties("alumni")
-       User user;
-    
+	int alumni_college_id;
 
+	@JsonIgnore
+	@ManyToOne
+	@JoinColumn(name="college_id")
+	College college;
+	
 	
 	@JsonIgnore
-	@OneToMany(mappedBy="alumni",cascade=CascadeType.ALL)
-	Set<Event> event;	
-	
-	
-	@JsonManagedReference
-	@OneToMany(mappedBy="alumni", cascade=CascadeType.ALL)
-	Set<AlumniCollege> alumnicollege;
-	
+	@ManyToOne
+	@JoinColumn(name="alumni_id")
+	Alumni alumni;
 }
+

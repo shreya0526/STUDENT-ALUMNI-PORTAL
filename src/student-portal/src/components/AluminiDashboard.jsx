@@ -448,7 +448,11 @@ const AlumniDashboard = () => {
   // Fetch alumni profile
   const fetchProfile = () => {
     setLoading(true);
+<<<<<<< HEAD
+    axios.get(`http://localhost:8080/Alumni/get-alumni-id-by-userid/${user.user_id}`)
+=======
     axios.get(`http://localhost:8080/alumni/Alumni/get-alumni-id-by-userid/${user.user_id}`)
+>>>>>>> 85febe0eb2915c94b1219d1f1d8a9367f8a61780
       .then(res => {
         const alumniData = res.data.alumnus;
         setProfile(alumniData);

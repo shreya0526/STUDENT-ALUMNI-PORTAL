@@ -7,13 +7,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.Event;
-
+import com.example.demo.entities.Student;
 import com.example.demo.repositories.EventRepository;
+import com.example.demo.repositories.StudentRepository;
 
 @Service
 public class EventService {
 	@Autowired
 	EventRepository eventrepository;
+	
+	
 	
 	public List<Event> getall(){
 		return eventrepository.findAll();
@@ -31,4 +34,12 @@ public class EventService {
 	}
 	
 	
-}
+	
+
+    public List<Event> getEventsForStudent(Integer student_id) {
+        return eventrepository.findEventsByStudentCollege(student_id);
+    }
+    }
+	
+	
+

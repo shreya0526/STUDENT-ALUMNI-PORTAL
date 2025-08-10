@@ -44,7 +44,7 @@ public class ReouteHelper {
 						//.uri("http://localhost:8082"))
 				.route("alumniService",r->r.path("/alumni/**")
 					    //.uri("lb://alumniService"))
-				.uri("http://localhost:5000"))
+				.uri("http://localhost:5037"))
 
 				.build();
 		

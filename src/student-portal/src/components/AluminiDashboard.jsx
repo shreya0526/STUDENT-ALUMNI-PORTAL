@@ -170,7 +170,27 @@ const AlumniDashboard = () => {
     sectorId: profile?.sectorId || 0, // Keep same or update later
     workId: profile?.workId || 0      // Keep same or update later
   };
-    console.log(updatedData);
+      if (!formData.user_name.trim()) {
+    alert("Name is required");
+    return;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(formData.email)) {
+    alert("Please enter a valid email");
+    return;
+  }
+
+  if (formData.password.length < 6) {
+    alert("Password must be at least 6 characters");
+    return;
+  }
+
+  const phonePattern = /^[0-9]{10}$/;
+  if (!phonePattern.test(formData.phone_no)) {
+    alert("Phone number must be 10 digits");
+    return;
+  }
   axios.put(`http://localhost:8080/alumni/Alumni/update`, updatedData)
     .then(() => {
       alert('Profile updated');

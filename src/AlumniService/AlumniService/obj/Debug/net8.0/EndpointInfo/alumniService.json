@@ -48,7 +48,7 @@
         }
       }
     },
-    "/Alumni/getevents/{userId}": {
+    "/alumni/Alumni/getevents/{userId}": {
       "get": {
         "tags": [
           "Alumni"
@@ -97,7 +97,7 @@
         }
       }
     },
-    "/Alumni/get-alumni-id-by-userid/{userId}": {
+    "/alumni/Alumni/get-alumni-id-by-userid/{userId}": {
       "get": {
         "tags": [
           "Alumni"
@@ -120,7 +120,7 @@
         }
       }
     },
-    "/Alumni/update": {
+    "/alumni/Alumni/update": {
       "put": {
         "tags": [
           "Alumni"
@@ -151,7 +151,7 @@
         }
       }
     },
-    "/api/Event": {
+    "/alumni/api/Event": {
       "get": {
         "tags": [
           "Event"
@@ -192,7 +192,7 @@
         }
       }
     },
-    "/api/Event/update/{eventId}": {
+    "/alumni/api/Event/update/{eventId}": {
       "put": {
         "tags": [
           "Event"
@@ -234,7 +234,7 @@
         }
       }
     },
-    "/api/Event/delete/{eventId}": {
+    "/alumni/api/Event/delete/{eventId}": {
       "delete": {
         "tags": [
           "Event"
@@ -257,7 +257,7 @@
         }
       }
     },
-    "/api/Event/registered-student-names/{eventId}": {
+    "/alumni/api/Event/registered-student-names/{eventId}": {
       "get": {
         "tags": [
           "Event"

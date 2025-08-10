@@ -147,6 +147,36 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "alumniService.Controllers.CollgeController",
+    "Method": "GetColleges",
+    "RelativePath": "api/Collge",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "alumniService.Controllers.SectorController",
+    "Method": "GetSectors",
+    "RelativePath": "api/Sector",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "alumniService.Controllers.WorkTitleController",
+    "Method": "GetWorkTitles",
+    "RelativePath": "api/WorkTitle",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "alumniService.Controllers.AlumniController",
     "Method": "CreateAlumnus",
     "RelativePath": "register",

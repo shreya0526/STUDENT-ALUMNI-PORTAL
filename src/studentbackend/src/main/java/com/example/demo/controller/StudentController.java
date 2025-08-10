@@ -22,6 +22,7 @@ import com.example.demo.entities.StudentSkillSet;
 import com.example.demo.entities.Studentdummy;
 import com.example.demo.entities.User;
 import com.example.demo.services.CollegeService;
+
 import com.example.demo.services.SkillSetService;
 import com.example.demo.services.StudentService;
 import com.example.demo.services.StudentSkillSetService;
@@ -44,6 +45,8 @@ public class StudentController {
 	UserService userservice;
 	
 	
+
+
 	@GetMapping("/all")
 	public List<Student> getall(){
 		return studentservice.getAll();
@@ -73,6 +76,8 @@ public class StudentController {
 	           
 	            studentskillsetservice.register(studentSkillSet);
 	        }
+	        
+	      
 		
 	return savedStudent;
 		

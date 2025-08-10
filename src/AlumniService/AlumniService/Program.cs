@@ -12,17 +12,17 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// CORS policy to allow React frontend
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowReactApp", builder =>
-    {
-        builder
-            .AllowAnyOrigin()
-            .AllowAnyHeader()
-            .AllowAnyMethod();
-    });
-});
+//// CORS policy to allow React frontend
+//builder.Services.AddCors(options =>
+//{
+//    options.AddPolicy("AllowReactApp", builder =>
+//    {
+//        builder
+//            .AllowAnyOrigin()
+//            .AllowAnyHeader()
+//            .AllowAnyMethod();
+//    });
+//});
 
 var app = builder.Build();
 
@@ -40,7 +40,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // Use the CORS policy
-app.UseCors("AllowReactApp");
+//app.UseCors("AllowReactApp");
 
 app.UseAuthorization();
 

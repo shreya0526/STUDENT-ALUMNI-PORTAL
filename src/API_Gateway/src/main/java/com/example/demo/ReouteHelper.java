@@ -19,7 +19,8 @@ public class ReouteHelper {
 	    CorsConfiguration config = new CorsConfiguration();
 	    
 	    config.setAllowCredentials(true);
-	    config.setAllowedOrigins(Arrays.asList("http://localhost:5173")); // Ensure it matches your frontend URL
+	    config.setAllowedOriginPatterns(Arrays.asList("http://localhost:*")); // flexible for all localhost ports
+ 
 	    config.setAllowedMethods(Arrays.asList("GET", "POST", "PUT", "DELETE", "OPTIONS"));
 	    config.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
 	    config.setExposedHeaders(Arrays.asList("Authorization")); // Expose headers if needed
@@ -41,8 +42,14 @@ public class ReouteHelper {
 				.route("adminbackend",r->r.path("/admin/**")
 					    .uri("lb://adminbackend"))
 						//.uri("http://localhost:8082"))
+<<<<<<< HEAD
 				.route("alumniService",r->r.path("/**")
 					    .uri("lb://alumniService"))
+=======
+				.route("alumniService",r->r.path("/alumni/**")
+					    //.uri("lb://alumniService"))
+				.uri("http://localhost:5037"))
+>>>>>>> 85febe0eb2915c94b1219d1f1d8a9367f8a61780
 
 				.build();
 		

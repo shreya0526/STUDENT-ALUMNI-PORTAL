@@ -12,7 +12,7 @@
   {
     "ContainingType": "alumniService.Controllers.AlumniController",
     "Method": "GetAlumniIdByUserId",
-    "RelativePath": "Alumni/get-alumni-id-by-userid/{userId}",
+    "RelativePath": "alumni/Alumni/get-alumni-id-by-userid/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -28,7 +28,7 @@
   {
     "ContainingType": "alumniService.Controllers.AlumniController",
     "Method": "GetEventsByAlumni",
-    "RelativePath": "Alumni/getevents/{userId}",
+    "RelativePath": "alumni/Alumni/getevents/{userId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -54,7 +54,7 @@
   {
     "ContainingType": "alumniService.Controllers.AlumniController",
     "Method": "UpdateAlumnusByAlumniId",
-    "RelativePath": "Alumni/update",
+    "RelativePath": "alumni/Alumni/update",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -68,19 +68,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "alumniService.Controllers.CollegeController",
-    "Method": "GetColleges",
-    "RelativePath": "api/College",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "alumniService.Controllers.EventController",
     "Method": "GetEventsWithAlumniInfo",
-    "RelativePath": "api/Event",
+    "RelativePath": "alumni/api/Event",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -90,7 +80,7 @@
   {
     "ContainingType": "alumniService.Controllers.EventController",
     "Method": "CreateEvent",
-    "RelativePath": "api/Event",
+    "RelativePath": "alumni/api/Event",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -106,7 +96,7 @@
   {
     "ContainingType": "alumniService.Controllers.EventController",
     "Method": "DeleteEvent",
-    "RelativePath": "api/Event/delete/{eventId}",
+    "RelativePath": "alumni/api/Event/delete/{eventId}",
     "HttpMethod": "DELETE",
     "IsController": true,
     "Order": 0,
@@ -122,7 +112,7 @@
   {
     "ContainingType": "alumniService.Controllers.EventController",
     "Method": "GetRegisteredStudentNames",
-    "RelativePath": "api/Event/registered-student-names/{eventId}",
+    "RelativePath": "alumni/api/Event/registered-student-names/{eventId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -138,7 +128,7 @@
   {
     "ContainingType": "alumniService.Controllers.EventController",
     "Method": "UpdateEvent",
-    "RelativePath": "api/Event/update/{eventId}",
+    "RelativePath": "alumni/api/Event/update/{eventId}",
     "HttpMethod": "PUT",
     "IsController": true,
     "Order": 0,
@@ -154,26 +144,6 @@
         "IsRequired": true
       }
     ],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "alumniService.Controllers.SectorController",
-    "Method": "GetSectors",
-    "RelativePath": "api/Sector",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "alumniService.Controllers.WorkTitleController",
-    "Method": "GetWorkTitles",
-    "RelativePath": "api/WorkTitle",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
     "ReturnTypes": []
   },
   {

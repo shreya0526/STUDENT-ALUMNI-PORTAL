@@ -137,6 +137,27 @@ const StudentDashboard = () => {
 
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
+      if (!formData.user_name.trim()) {
+    alert("Name is required");
+    return;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(formData.email)) {
+    alert("Please enter a valid email");
+    return;
+  }
+
+  if (formData.password.length < 6) {
+    alert("Password must be at least 6 characters");
+    return;
+  }
+
+  const phonePattern = /^[0-9]{10}$/;
+  if (!phonePattern.test(formData.phone_no)) {
+    alert("Phone number must be 10 digits");
+    return;
+  }
     axios.post('http://localhost:8080/student/student/update', formData)
       .then(() => {
         alert('Profile updated successfully');
@@ -147,12 +168,12 @@ const StudentDashboard = () => {
   };
 
   return (
-    <div className="d-flex" style={{ minHeight: '100vh' }}>
+    <div className="d-flex" style={{ minHeight: '100vh', backgroundColor: '#FFFDD0' }}> {/* Cream background */}
       <StudentSidebar handleSectionChange={handleSectionChange} />
       <div className="flex-grow-1 p-4">
-        <h2>Welcome Student, {user?.user_name} 👋</h2>
-        <p>Your email: <strong>{user?.email}</strong></p>
-        <hr />
+        <h2 style={{ color: '#800080' }}>Welcome Student, {user?.user_name} 👋</h2>
+        <p style={{ color: '#800080' }}>Your email: <strong>{user?.email}</strong></p>
+        <hr style={{ borderColor: '#FFC0CB' }} />
 
         {activeSection === 'dashboard' && (
           <StudentProfileCard

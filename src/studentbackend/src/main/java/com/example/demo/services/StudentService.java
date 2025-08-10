@@ -12,13 +12,14 @@ import com.example.demo.entities.User;
 import com.example.demo.repositories.StudentRepository;
 
 
+
 @Service
 public class StudentService {
 
 	@Autowired
 	StudentRepository studentrepository;
 	
-	
+	 
 	
 	public List<Student> getAll(){
 		return studentrepository.findAll();
@@ -34,17 +35,23 @@ public class StudentService {
 				}
 				return student;
 	}
-	public Student register(Student student) {
 		
+	
+		
+		public Student register(Student student) {
+		   
+		    return studentrepository.save(student);
+		}
 
-		return studentrepository.save(student);
-	}
+	
 	
 
     public Student getByUserId(int user_id) {
         return studentrepository.findStudentByUserId(user_id);
     }
 	
+    
+  
 }
 	
 

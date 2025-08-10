@@ -1,25 +1,3 @@
-// import React from 'react';
-
-// const StudentSidebar = ({ handleSectionChange }) => (
-//   <div className="bg-primary text-white p-3" style={{ width: '250px' }}>
-//     <h4 className="mb-4">Student Portal</h4>
-//     <ul className="nav flex-column">
-//       <li className="nav-item mb-2">
-//         <button className="btn btn-link text-white" onClick={() => handleSectionChange('dashboard')}>Dashboard</button>
-//       </li>
-//       <li className="nav-item mb-2">
-//         <button className="btn btn-link text-white" onClick={() => handleSectionChange('events')}>View Events</button>
-//       </li>
-//       <li className="nav-item mb-2">
-//         <button className="btn btn-link text-white" onClick={() => handleSectionChange('registeredEvents')}>Registered Events</button>
-//       </li>
-      
-//     </ul>
-//   </div>
-// );
-
-// export default StudentSidebar;
-
 import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -36,13 +14,14 @@ const StudentSidebar = ({ handleSectionChange }) => {
   };
 
   return (
-    <div className="bg-primary text-white p-3" style={{ width: "250px" }}>
+    <div className="text-white p-3" style={{ width: "250px", backgroundColor: '#800080' }}> {/* Purple sidebar */}
       <h4 className="mb-4">Student Portal</h4>
       <ul className="nav flex-column">
         <li className="nav-item mb-2">
           <button
             className="btn btn-link text-white"
             onClick={() => handleSectionChange("dashboard")}
+            style={{ color: 'white' }}
           >
             Dashboard
           </button>
@@ -51,6 +30,7 @@ const StudentSidebar = ({ handleSectionChange }) => {
           <button
             className="btn btn-link text-white"
             onClick={() => handleSectionChange("events")}
+            style={{ color: 'white' }}
           >
             View Events
           </button>
@@ -59,12 +39,13 @@ const StudentSidebar = ({ handleSectionChange }) => {
           <button
             className="btn btn-link text-white"
             onClick={() => handleSectionChange("registeredEvents")}
+            style={{ color: 'white' }}
           >
             Registered Events
           </button>
         </li>
         <li className="nav-item mt-4">
-          <button className="btn btn-danger w-100" onClick={handleLogout}>
+          <button className="btn w-100" onClick={handleLogout} style={{ backgroundColor: '#FF69B4', color: 'white', border: 'none' }}>
             Logout
           </button>
         </li>

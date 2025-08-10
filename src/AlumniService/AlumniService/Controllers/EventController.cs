@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace alumniService.Controllers
 {
     
-    [Route("api/[controller]")]
+    [Route("/alumni/api/[controller]")]
     [ApiController]
     public class EventController : ControllerBase
     {
@@ -47,7 +47,7 @@ namespace alumniService.Controllers
             using (var db = new P22AlumniportalContext())
             {
                 
-                var alumni = db.Alumni.FirstOrDefault(a => a.AlumniId == dto.AlumniId);
+                var alumni = db.Alumni.FirstOrDefault(a => a.UserId == dto.AlumniId);
                 if (alumni == null)
                 {
                     return BadRequest($"No alumni found with ID {dto.AlumniId}");
@@ -81,7 +81,7 @@ namespace alumniService.Controllers
             using (var db = new P22AlumniportalContext())
             {
                 var existingEvent = db.Events.FirstOrDefault(e =>
-                    e.EventId == eventId && e.AlumniId == updatedEventDto.AlumniId);
+                    e.EventId == eventId );
 
                 if (existingEvent == null)
                 {

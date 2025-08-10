@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 namespace alumniService.Controllers
 {
     
-    [Route("api/[controller]")]
+    [Route("/alumni/api/[controller]")]
     [ApiController]
     public class EventController : ControllerBase
     {

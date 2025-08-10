@@ -147,12 +147,12 @@ const StudentDashboard = () => {
   };
 
   return (
-    <div className="d-flex" style={{ minHeight: '100vh' }}>
+    <div className="d-flex" style={{ minHeight: '100vh', backgroundColor: '#FFFDD0' }}> {/* Cream background */}
       <StudentSidebar handleSectionChange={handleSectionChange} />
       <div className="flex-grow-1 p-4">
-        <h2>Welcome Student, {user?.user_name} 👋</h2>
-        <p>Your email: <strong>{user?.email}</strong></p>
-        <hr />
+        <h2 style={{ color: '#800080' }}>Welcome Student, {user?.user_name} 👋</h2>
+        <p style={{ color: '#800080' }}>Your email: <strong>{user?.email}</strong></p>
+        <hr style={{ borderColor: '#FFC0CB' }} />
 
         {activeSection === 'dashboard' && (
           <StudentProfileCard

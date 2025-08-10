@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import axios from 'axios';
@@ -191,69 +190,65 @@ const handleDeleteEvent = (eventId) => {
 
 
   return (
-    <div className="d-flex" style={{ minHeight: '100vh' }}>
+    <div className="d-flex" style={{ minHeight: '100vh', backgroundColor: '#FFFDD0' }}> {/* Cream background */}
       {/* Sidebar */}
-      <div className="bg-dark text-white p-3" style={{ width: '250px' }}>
+      <div className="text-white p-3" style={{ width: '250px', backgroundColor: '#800080' }}> {/* Purple sidebar */}
         <h4 className="mb-4">Admin Panel</h4>
         <ul className="nav flex-column">
           <li className="nav-item mb-2">
-            <button className="btn btn-link text-white" onClick={() => handleSectionChange('dashboard')}>Dashboard</button>
+            <button className="btn btn-link text-white" onClick={() => handleSectionChange('dashboard')} style={{ color: activeSection === 'dashboard' ? '#FFC0CB' : 'white' }}>Dashboard</button>
           </li>
           <li className="nav-item mb-2">
-            <button className="btn btn-link text-white" onClick={() => handleSectionChange('manageStudents')}>Manage Students</button>
+            <button className="btn btn-link text-white" onClick={() => handleSectionChange('manageStudents')} style={{ color: activeSection === 'manageStudents' ? '#FFC0CB' : 'white' }}>Manage Students</button>
           </li>
           <li className="nav-item mb-2">
-            <button className="btn btn-link text-white" onClick={() => handleSectionChange('manageAlumni')}>Manage Alumni</button>
+            <button className="btn btn-link text-white" onClick={() => handleSectionChange('manageAlumni')} style={{ color: activeSection === 'manageAlumni' ? '#FFC0CB' : 'white' }}>Manage Alumni</button>
           </li>
           <li className="nav-item mb-2">
-            <button className="btn btn-link text-white" onClick={() => handleSectionChange('manageEvents')}>Manage Events</button>
+            <button className="btn btn-link text-white" onClick={() => handleSectionChange('manageEvents')} style={{ color: activeSection === 'manageEvents' ? '#FFC0CB' : 'white' }}>Manage Events</button>
           </li>
           <li className="nav-item mb-2">
-  <button className="btn btn-link text-white" onClick={() => handleSectionChange('manageColleges')}>Manage Colleges</button>
-</li>
-<li className="nav-item mb-2">
-  <button className="btn btn-link text-white" onClick={() => handleSectionChange('registeredStudents')}>
-    Registered Students
-  </button>
-</li>
-
-          <li className="nav-item mb-2">
-            <button className="btn btn-link text-white" onClick={() => handleSectionChange('settings')}>Settings</button>
+            <button className="btn btn-link text-white" onClick={() => handleSectionChange('manageColleges')} style={{ color: activeSection === 'manageColleges' ? '#FFC0CB' : 'white' }}>Manage Colleges</button>
           </li>
-
+          <li className="nav-item mb-2">
+            <button className="btn btn-link text-white" onClick={() => handleSectionChange('registeredStudents')} style={{ color: activeSection === 'registeredStudents' ? '#FFC0CB' : 'white' }}>
+              Registered Students
+            </button>
+          </li>
+          <li className="nav-item mb-2">
+            <button className="btn btn-link text-white" onClick={() => handleSectionChange('settings')} style={{ color: activeSection === 'settings' ? '#FFC0CB' : 'white' }}>Settings</button>
+          </li>
           <li className="nav-item mt-4">
-    <button className="btn btn-danger w-100" onClick={handleLogout}>
-      Logout
-    </button>
-  </li>
+            <button className="btn w-100" onClick={handleLogout} style={{ backgroundColor: '#FF69B4', color: 'white', border: 'none' }}>
+              Logout
+            </button>
+          </li>
         </ul>
       </div>
 
       {/* Main Content */}
       <div className="flex-grow-1 p-4">
-        <h2>Welcome Admin, {user?.user_name} 👋</h2>
-        <p>Your email: <strong>{user?.email}</strong></p>
-        <hr />
+        <h2 style={{ color: '#800080' }}>Welcome Admin, {user?.user_name} 👋</h2>
+        <p style={{ color: '#800080' }}>Your email: <strong>{user?.email}</strong></p>
+        <hr style={{ borderColor: '#FFC0CB' }} />
 
         {/* Dashboard Section */}
         {activeSection === 'dashboard' && (
           <div>
-            <h5>Admin Profile Overview</h5>
+            <h5 style={{ color: '#800080' }}>Admin Profile Overview</h5>
             {adminProfile ? (
-              <div className="card shadow mx-auto" style={{ maxWidth: '500px' }}>
+              <div className="card shadow mx-auto" style={{ maxWidth: '500px', backgroundColor: '#FFFDD0', boxShadow: '0 4px 8px rgba(255, 192, 203, 0.3)' }}>
                 <div className="card-body text-center">
-                  <h4>{adminProfile.user_name}</h4>
-                 
-                  <div className="text-start">
+                  <h4 style={{ color: '#800080' }}>{adminProfile.user_name}</h4>
+                  <div className="text-start" style={{ color: '#4B0082' }}>
                     <p><strong>Email:</strong> {adminProfile.email}</p>
                     <p><strong>Phone:</strong> {adminProfile.phone_no}</p>
                     <p><strong>City:</strong> {adminProfile.city.city_name}</p>
-                    
                   </div>
                 </div>
               </div>
             ) : (
-              <p>Loading profile...</p>
+              <p style={{ color: '#800080' }}>Loading profile...</p>
             )}
           </div>
         )}
@@ -261,12 +256,12 @@ const handleDeleteEvent = (eventId) => {
         {/* Manage Students Section */}
         {activeSection === 'manageStudents' && (
           <div>
-            <h5>Manage Students</h5>
+            <h5 style={{ color: '#800080' }}>Manage Students</h5>
             {loading ? (
-              <p>Loading students...</p>
+              <p style={{ color: '#800080' }}>Loading students...</p>
             ) : (
-              <table className="table table-striped table-bordered">
-                <thead>
+              <table className="table table-striped table-bordered" style={{ borderColor: '#FFC0CB' }}>
+                <thead style={{ backgroundColor: '#FFC0CB', color: '#4B0082' }}>
                   <tr>
                     <th>Student ID</th>
                     <th>Name</th>
@@ -279,8 +274,8 @@ const handleDeleteEvent = (eventId) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {students.map((student) => (
-                    <tr key={student.student_id}>
+                  {students.map((student, index) => (
+                    <tr key={student.student_id} style={{ backgroundColor: index % 2 === 0 ? '#FFFDD0' : '#FFFAFA', color: '#4B0082' }}>
                       <td>{student.student_id}</td>
                       <td>{student.user.user_name}</td>
                       <td>{student.user.email}</td>
@@ -294,8 +289,9 @@ const handleDeleteEvent = (eventId) => {
                       </td>
                       <td>
                         <button
-                          className="btn btn-danger btn-sm"
+                          className="btn btn-sm"
                           onClick={() => handleDeleteStudent(student.student_id)}
+                          style={{ backgroundColor: '#FF69B4', color: 'white', border: 'none' }}
                         >
                           Delete
                         </button>
@@ -311,12 +307,12 @@ const handleDeleteEvent = (eventId) => {
         {/* Manage Alumni Section */}
         {activeSection === 'manageAlumni' && (
           <div>
-            <h5>Manage Alumni</h5>
+            <h5 style={{ color: '#800080' }}>Manage Alumni</h5>
             {loading ? (
-              <p>Loading alumni...</p>
+              <p style={{ color: '#800080' }}>Loading alumni...</p>
             ) : (
-              <table className="table table-striped table-bordered">
-                <thead>
+              <table className="table table-striped table-bordered" style={{ borderColor: '#FFC0CB' }}>
+                <thead style={{ backgroundColor: '#FFC0CB', color: '#4B0082' }}>
                   <tr>
                     <th>Alumni ID</th>
                     <th>Name</th>
@@ -325,30 +321,31 @@ const handleDeleteEvent = (eventId) => {
                     <th>City</th>
                     <th>Sector</th>
                     <th>Work Title</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
                 <tbody>
-  {alumni.map((alum) => (
-    <tr key={alum.alumni_id}>
-      <td>{alum.alumni_id}</td>
-      <td>{alum.user.user_name}</td>
-      <td>{alum.user.email}</td>
-      <td>{alum.user.phone_no}</td>
-      <td>{alum.user.city.city_name}</td>
-      <td>{alum.sector.sector_name}</td>
-      <td>{alum.worktitle.work_name}</td>
-      <td>
-        <button
-          className="btn btn-danger btn-sm"
-          onClick={() => handleDeleteAlumni(alum.alumni_id)}
-        >
-          Delete
-        </button>
-      </td>
-    </tr>
-  ))}
-</tbody>
-
+                  {alumni.map((alum, index) => (
+                    <tr key={alum.alumni_id} style={{ backgroundColor: index % 2 === 0 ? '#FFFDD0' : '#FFFAFA', color: '#4B0082' }}>
+                      <td>{alum.alumni_id}</td>
+                      <td>{alum.user.user_name}</td>
+                      <td>{alum.user.email}</td>
+                      <td>{alum.user.phone_no}</td>
+                      <td>{alum.user.city.city_name}</td>
+                      <td>{alum.sector.sector_name}</td>
+                      <td>{alum.worktitle.work_name}</td>
+                      <td>
+                        <button
+                          className="btn btn-sm"
+                          onClick={() => handleDeleteAlumni(alum.alumni_id)}
+                          style={{ backgroundColor: '#FF69B4', color: 'white', border: 'none' }}
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
               </table>
             )}
           </div>
@@ -357,12 +354,12 @@ const handleDeleteEvent = (eventId) => {
         {/* Manage Events Section */}
         {activeSection === 'manageEvents' && (
           <div>
-            <h5>Manage Events</h5>
+            <h5 style={{ color: '#800080' }}>Manage Events</h5>
             {loading ? (
-              <p>Loading events...</p>
+              <p style={{ color: '#800080' }}>Loading events...</p>
             ) : (
-              <table className="table table-striped table-bordered">
-                <thead>
+              <table className="table table-striped table-bordered" style={{ borderColor: '#FFC0CB' }}>
+                <thead style={{ backgroundColor: '#FFC0CB', color: '#4B0082' }}>
                   <tr>
                     <th>Event ID</th>
                     <th>Event Name</th>
@@ -370,176 +367,177 @@ const handleDeleteEvent = (eventId) => {
                     <th>Time</th>
                     <th>Link</th>
                     <th>Description</th>
+                    <th>Actions</th>
                   </tr>
                 </thead>
-               <tbody>
-        {events.map((event) => (
-          <tr key={event.event_id}>
-            <td>{event.event_id}</td>
-            <td>{event.event_name}</td>
-            <td>{event.date}</td>
-            <td>{event.time}</td>
-            <td>{event.link}</td>
-            <td>{event.description}</td>
-            <td>
-              <button
-                className="btn btn-danger btn-sm"
-                onClick={() => handleDeleteEvent(event.event_id)}
-              >
-                Delete
-              </button>
-            </td>
-          </tr>
-        ))}
-      </tbody>
+                <tbody>
+                  {events.map((event, index) => (
+                    <tr key={event.event_id} style={{ backgroundColor: index % 2 === 0 ? '#FFFDD0' : '#FFFAFA', color: '#4B0082' }}>
+                      <td>{event.event_id}</td>
+                      <td>{event.event_name}</td>
+                      <td>{event.date}</td>
+                      <td>{event.time}</td>
+                      <td>{event.link}</td>
+                      <td>{event.description}</td>
+                      <td>
+                        <button
+                          className="btn btn-sm"
+                          onClick={() => handleDeleteEvent(event.event_id)}
+                          style={{ backgroundColor: '#FF69B4', color: 'white', border: 'none' }}
+                        >
+                          Delete
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
               </table>
             )}
           </div>
         )}
 
-{/* Manage Colleges Section */}
-{activeSection === 'manageColleges' && (
-  <div>
-    <div className="d-flex justify-content-between align-items-center mb-3">
-      <h5>Manage Colleges</h5>
-      <button
-        className="btn btn-primary"
-        onClick={() => setShowCollegeForm(!showCollegeForm)}
-      >
-        {showCollegeForm ? 'Cancel' : 'Add College'}
-      </button>
-    </div>
+        {/* Manage Colleges Section */}
+        {activeSection === 'manageColleges' && (
+          <div>
+            <div className="d-flex justify-content-between align-items-center mb-3">
+              <h5 style={{ color: '#800080' }}>Manage Colleges</h5>
+              <button
+                className="btn"
+                onClick={() => setShowCollegeForm(!showCollegeForm)}
+                style={{ backgroundColor: '#FF69B4', color: 'white', border: 'none' }}
+              >
+                {showCollegeForm ? 'Cancel' : 'Add College'}
+              </button>
+            </div>
 
-    {showCollegeForm && (
-      <div className="card p-3 mb-4 shadow-sm">
-        <div className="mb-3">
-          <label className="form-label">College Name</label>
-          <input
-            type="text"
-            className="form-control"
-            name="college_name"
-            value={newCollege.college_name}
-            onChange={handleCollegeInputChange}
-            placeholder="Enter college name"
-          />
-        </div>
+            {showCollegeForm && (
+              <div className="card p-3 mb-4 shadow-sm" style={{ backgroundColor: '#FFFDD0', boxShadow: '0 4px 8px rgba(255, 192, 203, 0.3)' }}>
+                <div className="mb-3">
+                  <label className="form-label" style={{ color: '#4B0082' }}>College Name</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    name="college_name"
+                    value={newCollege.college_name}
+                    onChange={handleCollegeInputChange}
+                    placeholder="Enter college name"
+                    style={{ borderColor: '#FFC0CB' }}
+                  />
+                </div>
+                <div className="mb-3">
+                  <label className="form-label" style={{ color: '#4B0082' }}>Select City</label>
+                  <select
+                    className="form-select"
+                    name="city_id"
+                    value={newCollege.city_id}
+                    onChange={handleCollegeInputChange}
+                    style={{ borderColor: '#FFC0CB' }}
+                  >
+                    <option value="">-- Select City --</option>
+                    {cities.map((city) => (
+                      <option key={city.city_id} value={city.city_id}>
+                        {city.city_name}
+                      </option>
+                    ))}
+                  </select>
+                </div>
+                <button className="btn" onClick={handleAddCollege} style={{ backgroundColor: '#800080', color: 'white', border: 'none' }}>
+                  Submit
+                </button>
+              </div>
+            )}
 
-        <div className="mb-3">
-          <label className="form-label">Select City</label>
-          <select
-            className="form-select"
-            name="city_id"
-            value={newCollege.city_id}
-            onChange={handleCollegeInputChange}
-          >
-            <option value="">-- Select City --</option>
-            {cities.map((city) => (
-              <option key={city.city_id} value={city.city_id}>
-                {city.city_name}
-              </option>
-            ))}
-          </select>
-        </div>
-
-        <button className="btn btn-success" onClick={handleAddCollege}>
-          Submit
-        </button>
-      </div>
-    )}
-
-    {loading ? (
-      <p>Loading colleges...</p>
-    ) : (
-      <table className="table table-striped table-bordered">
-        <thead>
-          <tr>
-            <th>College ID</th>
-            <th>College Name</th>
-            <th>City</th>
-          </tr>
-        </thead>
-        <tbody>
-          {colleges.map((college) => (
-            <tr key={college.college_id}>
-              <td>{college.college_id}</td>
-              <td>{college.college_name}</td>
-              <td>{college.city?.city_name || 'N/A'}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    )}
-  </div>
-)}
-
-
-{activeSection === 'registeredStudents' && (
-  <div>
-    <h5>View Registered Students for an Event</h5>
-
-    <div className="mb-3">
-      <label className="form-label">Select Event</label>
-      <select
-        className="form-select"
-        value={selectedEventId}
-        onChange={(e) => {
-          const eventId = e.target.value;
-          setSelectedEventId(eventId);
-          if (eventId) {
-            fetchRegisteredStudents(eventId);
-          } else {
-            setRegisteredStudents([]);
-          }
-        }}
-      >
-        <option value="">-- Select Event --</option>
-        {events.map((event) => (
-          <option key={event.event_id} value={event.event_id}>
-            {event.event_name}
-          </option>
-        ))}
-      </select>
-    </div>
-
-    {selectedEventId && (
-      <div>
-        {registeredStudents.length > 0 ? (
-          <table className="table table-striped table-bordered">
-            <thead>
-              <tr>
-                <th>Student ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>College</th>
-              </tr>
-            </thead>
-            <tbody>
-              {registeredStudents.map((student) => (
-                <tr key={student.student_id}>
-                  <td>{student.student_id}</td>
-                  <td>{student.user?.user_name}</td>
-                  <td>{student.user?.email}</td>
-                  <td>{student.user?.phone_no}</td>
-                  <td>{student.college?.college_name}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        ) : (
-          <p>No students registered for this event.</p>
+            {loading ? (
+              <p style={{ color: '#800080' }}>Loading colleges...</p>
+            ) : (
+              <table className="table table-striped table-bordered" style={{ borderColor: '#FFC0CB' }}>
+                <thead style={{ backgroundColor: '#FFC0CB', color: '#4B0082' }}>
+                  <tr>
+                    <th>College ID</th>
+                    <th>College Name</th>
+                    <th>City</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {colleges.map((college, index) => (
+                    <tr key={college.college_id} style={{ backgroundColor: index % 2 === 0 ? '#FFFDD0' : '#FFFAFA', color: '#4B0082' }}>
+                      <td>{college.college_id}</td>
+                      <td>{college.college_name}</td>
+                      <td>{college.city?.city_name || 'N/A'}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
+          </div>
         )}
-      </div>
-    )}
-  </div>
-)}
 
+        {activeSection === 'registeredStudents' && (
+          <div>
+            <h5 style={{ color: '#800080' }}>View Registered Students for an Event</h5>
+            <div className="mb-3">
+              <label className="form-label" style={{ color: '#4B0082' }}>Select Event</label>
+              <select
+                className="form-select"
+                value={selectedEventId}
+                onChange={(e) => {
+                  const eventId = e.target.value;
+                  setSelectedEventId(eventId);
+                  if (eventId) {
+                    fetchRegisteredStudents(eventId);
+                  } else {
+                    setRegisteredStudents([]);
+                  }
+                }}
+                style={{ borderColor: '#FFC0CB' }}
+              >
+                <option value="">-- Select Event --</option>
+                {events.map((event) => (
+                  <option key={event.event_id} value={event.event_id}>
+                    {event.event_name}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {selectedEventId && (
+              <div>
+                {registeredStudents.length > 0 ? (
+                  <table className="table table-striped table-bordered" style={{ borderColor: '#FFC0CB' }}>
+                    <thead style={{ backgroundColor: '#FFC0CB', color: '#4B0082' }}>
+                      <tr>
+                        <th>Student ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>College</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {registeredStudents.map((student, index) => (
+                        <tr key={student.student_id} style={{ backgroundColor: index % 2 === 0 ? '#FFFDD0' : '#FFFAFA', color: '#4B0082' }}>
+                          <td>{student.student_id}</td>
+                          <td>{student.user?.user_name}</td>
+                          <td>{student.user?.email}</td>
+                          <td>{student.user?.phone_no}</td>
+                          <td>{student.college?.college_name}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                ) : (
+                  <p style={{ color: '#800080' }}>No students registered for this event.</p>
+                )}
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Settings Section */}
         {activeSection === 'settings' && (
           <div>
-            <h5>Settings</h5>
-            <p>Admin settings and preferences.</p>
+            <h5 style={{ color: '#800080' }}>Settings</h5>
+            <p style={{ color: '#800080' }}>Admin settings and preferences.</p>
           </div>
         )}
       </div>

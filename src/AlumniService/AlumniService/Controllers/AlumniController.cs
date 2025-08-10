@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace alumniService.Controllers
 {
-    [Route("[controller]")]
+    [Route("/alumni/[controller]")]
     [ApiController]
     public class AlumniController : ControllerBase
     {

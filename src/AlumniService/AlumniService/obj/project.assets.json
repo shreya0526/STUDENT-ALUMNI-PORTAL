@@ -4233,23 +4233,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Yatendra\\.nuget\\packages\\": {},
+    "C:\\Users\\wasee\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yatendra\\Downloads\\alumniService\\alumniService\\alumniService.csproj",
+      "projectUniqueName": "C:\\Users\\wasee\\OneDrive\\Desktop\\Student_Alumni_Portal\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\alumniService.csproj",
       "projectName": "alumniService",
-      "projectPath": "C:\\Users\\Yatendra\\Downloads\\alumniService\\alumniService\\alumniService.csproj",
-      "packagesPath": "C:\\Users\\Yatendra\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yatendra\\Downloads\\alumniService\\alumniService\\obj\\",
+      "projectPath": "C:\\Users\\wasee\\OneDrive\\Desktop\\Student_Alumni_Portal\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\alumniService.csproj",
+      "packagesPath": "C:\\Users\\wasee\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\wasee\\OneDrive\\Desktop\\Student_Alumni_Portal\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Yatendra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\wasee\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

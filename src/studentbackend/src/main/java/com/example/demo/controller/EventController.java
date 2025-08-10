@@ -30,11 +30,10 @@ public class EventController {
 	}
 	
 	
-	
-	
-	
-    @GetMapping("/bystudent/{student_id}")
-    public List<Event> getEventsByStudent(@PathVariable Integer student_id) {
-        return eventservice.getEventsForStudent(student_id);
+
+    @GetMapping("/{college_id}")
+    public List<Event> getEventsByCollege(@PathVariable int college_id) {
+        List<Event> events = eventservice.getEventsByCollege(college_id);
+        return events;
     }
 }

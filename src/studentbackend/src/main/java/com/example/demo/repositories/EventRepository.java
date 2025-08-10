@@ -12,12 +12,14 @@ import com.example.demo.entities.Event;
 @Repository
 public interface EventRepository extends JpaRepository<Event, Integer> {
 
-	
-	@Query("SELECT e FROM Event e " +
-		       "JOIN e.alumni a " +
-		       "JOIN a.alumnicollege ac " +
-		       "JOIN ac.college c " +
-		       "JOIN Student s ON s.college = c " +
-		       "WHERE s.student_id = :student_id")
-		List<Event> findEventsByStudentCollege(@Param("student_id") Integer student_id);
+
+    @Query("""
+        SELECT e FROM Event e
+        WHERE e.alumni.alumni_id IN (
+            SELECT ac.alumni.alumni_id
+            FROM AlumniCollege ac
+            WHERE ac.college.college_id = :college_id
+        )
+    """)
+    List<Event> findEventsByCollegeId(@Param("college_id") int college_id);
 }

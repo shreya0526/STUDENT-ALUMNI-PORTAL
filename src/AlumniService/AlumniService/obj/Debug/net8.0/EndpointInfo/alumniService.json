@@ -151,6 +151,18 @@
         }
       }
     },
+    "/api/Collge": {
+      "get": {
+        "tags": [
+          "Collge"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/alumni/api/Event": {
       "get": {
         "tags": [
@@ -280,6 +292,18 @@
         }
       }
     },
+    "/api/Sector": {
+      "get": {
+        "tags": [
+          "Sector"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -315,6 +339,18 @@
                 }
               }
             }
+          }
+        }
+      }
+    },
+    "/api/WorkTitle": {
+      "get": {
+        "tags": [
+          "WorkTitle"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
           }
         }
       }

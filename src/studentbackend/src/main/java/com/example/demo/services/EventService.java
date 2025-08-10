@@ -35,11 +35,9 @@ public class EventService {
 	
 	
 	
-
-    public List<Event> getEventsForStudent(Integer student_id) {
-        return eventrepository.findEventsByStudentCollege(student_id);
-    }
-    }
-	
+	  public List<Event> getEventsByCollege(int college_id) {
+	        return eventrepository.findEventsByCollegeId(college_id);
+	    }
+	}
 	
 

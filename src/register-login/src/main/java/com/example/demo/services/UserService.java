@@ -3,6 +3,7 @@ package com.example.demo.services;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
@@ -16,6 +17,8 @@ public class UserService {
 	
 	@Autowired
 	EmailService emailservice;
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
 	public List<User> getAll(){
 		return userrepository.findAll();
@@ -23,9 +26,13 @@ public class UserService {
 
 
 	public User register(User user) {
-	    User saveduser = userrepository.save(user);
+	    
 
 	   
+	    user.setPassword(passwordEncoder.encode(user.getPassword()));
+
+	    User saveduser = userrepository.save(user);
+
 	    if (saveduser != null) {
 	        String subject = "Welcome to the Student Alumni Portal!";
 	        String body = String.format(
@@ -39,7 +46,11 @@ public class UserService {
 	}
 	
 	public User login(String email,String password) {
-		return userrepository.loginCheck(email,password);
+		 User user = userrepository.findByEmail(email);
+		    if (user != null && passwordEncoder.matches(password, user.getPassword())) {
+		        return user;
+		    }
+		    return null;
 	}
 	
 	

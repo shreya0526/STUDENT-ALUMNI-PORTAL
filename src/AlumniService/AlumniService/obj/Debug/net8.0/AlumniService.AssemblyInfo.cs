@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("alumniService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fb898aba6cb84947770049282c4b0073ad3c67ea")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c82363a79527499cd3d8763b017b8fcd3e4077e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("alumniService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("alumniService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

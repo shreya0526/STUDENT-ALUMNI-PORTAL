@@ -42,15 +42,10 @@ public class ReouteHelper {
 				.route("adminbackend",r->r.path("/admin/**")
 					    .uri("lb://adminbackend"))
 						//.uri("http://localhost:8082"))
-<<<<<<< HEAD
-				.route("alumniService",r->r.path("/**")
-					    .uri("lb://alumniService"))
-=======
+
 				.route("alumniService",r->r.path("/alumni/**")
 					    //.uri("lb://alumniService"))
 				.uri("http://localhost:5037"))
->>>>>>> 85febe0eb2915c94b1219d1f1d8a9367f8a61780
-
 				.build();
 		
 	}

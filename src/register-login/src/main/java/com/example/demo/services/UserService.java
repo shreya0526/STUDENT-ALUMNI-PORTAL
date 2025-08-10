@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
 import com.example.demo.entities.User;
 import com.example.demo.repositories.UserRepository;
 
@@ -13,11 +14,28 @@ public class UserService {
 	@Autowired
 	UserRepository userrepository;
 	
+	@Autowired
+	EmailService emailservice;
+	
 	public List<User> getAll(){
 		return userrepository.findAll();
 	}
+
+
 	public User register(User user) {
-		return userrepository.save(user);
+	    User saveduser = userrepository.save(user);
+
+	   
+	    if (saveduser != null) {
+	        String subject = "Welcome to the Student Alumni Portal!";
+	        String body = String.format(
+	            "Hello %s,\n\nWelcome to our Student Alumni Portal. Your account has been successfully created.\n\nRegards,\nStudent Alumni Portal Team",
+	            saveduser.getUser_name()
+	        );
+	        emailservice.sendEmail(saveduser.getEmail(), subject, body);
+	    }
+
+	    return saveduser;
 	}
 	
 	public User login(String email,String password) {

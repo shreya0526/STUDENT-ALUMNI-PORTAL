@@ -35,6 +35,13 @@ public class Event {
 	String description;
 	
 	
+	
+	
+    
+   
+   
+    
+	
 	@ManyToOne(cascade=CascadeType.ALL)
     @JoinColumn(name = "alumni_id")
     @JsonIgnoreProperties("event")

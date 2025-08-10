@@ -188,15 +188,15 @@ const AlumniDetails = () => {
   const [error, setError] = useState('');
 
   useEffect(() => {
-    axios.get('http://localhost:5037/api/College')
+    axios.get('http://localhost:8080/api/College')
       .then(res => setColleges(res.data))
       .catch(() => setError('Failed to load colleges'));
 
-    axios.get('http://localhost:5037/api/Sector')
+    axios.get('http://localhost:8080/api/Sector')
       .then(res => setSectors(res.data))
       .catch(() => setError('Failed to load sectors'));
 
-    axios.get('http://localhost:5037/api/WorkTitle')
+    axios.get('http://localhost:8080/api/WorkTitle')
       .then(res => setWorks(res.data))
       .catch(() => setError('Failed to load work options'));
   }, []);

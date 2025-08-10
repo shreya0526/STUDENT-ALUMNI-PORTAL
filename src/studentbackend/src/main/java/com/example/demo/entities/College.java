@@ -1,6 +1,9 @@
 package com.example.demo.entities;
 
+import java.util.Set;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -10,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,10 +37,16 @@ public class College {
     String college_Name;
 
   
-    @JsonIgnoreProperties("collage")
-	@ManyToOne(cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("college")
+	@ManyToOne
 	@JoinColumn(name="city_id")
 	City city;
+    
+    @JsonManagedReference
+    @OneToMany(mappedBy="college")
+    Set<AlumniCollege> alumnicollege;
+
+    
 	
 	
 	

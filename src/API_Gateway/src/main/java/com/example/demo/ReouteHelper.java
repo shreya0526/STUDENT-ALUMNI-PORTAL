@@ -41,6 +41,8 @@ public class ReouteHelper {
 				.route("adminbackend",r->r.path("/admin/**")
 					    .uri("lb://adminbackend"))
 						//.uri("http://localhost:8082"))
+				.route("alumniService",r->r.path("/**")
+					    .uri("lb://alumniService"))
 
 				.build();
 		

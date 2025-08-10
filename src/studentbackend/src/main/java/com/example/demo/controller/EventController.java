@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,4 +28,13 @@ public class EventController {
 	public Event getOne(@RequestParam("event_id") int event_id) {
 		return eventservice.getOne(event_id);
 	}
+	
+	
+	
+	
+	
+    @GetMapping("/bystudent/{student_id}")
+    public List<Event> getEventsByStudent(@PathVariable Integer student_id) {
+        return eventservice.getEventsForStudent(student_id);
+    }
 }

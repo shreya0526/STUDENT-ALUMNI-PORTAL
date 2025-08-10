@@ -71,7 +71,7 @@ const handleLogout = () => {
 
   const fetchProfile = () => {
     setLoading(true);
-    axios.get(`http://localhost:5037/Alumni/get-alumni-id-by-userid/${user.user_id}`)
+    axios.get(`http://localhost:8080/Alumni/get-alumni-id-by-userid/${user.user_id}`)
       .then(res => {
         const alumniData = res.data.alumnus;
         setProfile(alumniData);

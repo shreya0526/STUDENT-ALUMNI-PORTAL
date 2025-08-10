@@ -13,9 +13,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.entities.Alumni;
 import com.example.demo.services.AlumniService;
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/alumni")
+@RequestMapping("/admin/alumni")
 public class AlumniController {
 	
 	@Autowired

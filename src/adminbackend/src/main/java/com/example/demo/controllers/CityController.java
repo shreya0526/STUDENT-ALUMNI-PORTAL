@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entities.City;
 import com.example.demo.services.CityService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/city")
+@RequestMapping("/admin/city")
 public class CityController {
 
 	

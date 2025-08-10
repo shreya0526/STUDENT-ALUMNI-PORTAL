@@ -22,9 +22,9 @@ import com.example.demo.services.RoleService;
 import com.example.demo.services.UserService;
 
 
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/registerlogin/user")
 public class UserController {
 	@Autowired
 	UserService user_serv;
@@ -39,11 +39,6 @@ public class UserController {
 	public List<User> getall(){
 		return user_serv.getAll();
 	}
-
-	
-	
-	
-	
 
 	
 	@PostMapping("/register")

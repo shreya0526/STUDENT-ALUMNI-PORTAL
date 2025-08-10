@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entities.College;
 import com.example.demo.services.CollegeService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 
 @RestController
-@RequestMapping("/college")
+@RequestMapping("/student/college")
 public class CollegeController {
 
 	@Autowired

@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\AlumniService",
+    "\\AlumniService\\bin",
+    "\\AlumniService\\Controllers",
+    "\\AlumniService\\Models",
+    "\\AlumniService\\Properties"
+  ],
+  "SelectedNode": "\\AlumniService\\Controllers\\EventController.cs",
+  "PreviewInSolutionExplorer": false
+}

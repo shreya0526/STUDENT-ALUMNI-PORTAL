@@ -28,9 +28,9 @@ import com.example.demo.services.StudentService;
 import com.example.demo.services.StudentSkillSetService;
 import com.example.demo.services.UserService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 @RestController
-@RequestMapping("/student")
+@RequestMapping("/student/student")
 public class StudentController {
 	@Autowired
 	StudentSkillSetService studentskillsetservice;

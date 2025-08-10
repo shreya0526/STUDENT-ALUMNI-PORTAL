@@ -12,10 +12,10 @@ import com.example.demo.entities.Role;
 import com.example.demo.services.RoleService;
 
 
-@CrossOrigin(origins = "http://localhost:5173")
+//@CrossOrigin(origins = "http://localhost:5173")
 
 @RestController
-@RequestMapping("/role")
+@RequestMapping("/registerlogin/role")
 public class RoleController {
 
 	@Autowired

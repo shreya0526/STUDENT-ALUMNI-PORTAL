@@ -47,8 +47,11 @@ const StudentDashboard = () => {
 
   const fetchStudentProfile = () => {
     setLoading(true);
-    axios.get(`http://localhost:8081/student/userid/${user.user_id}`)
+
+    axios.get(`http://localhost:8080/student/student/userid/${user.user_id}`)
       .then(res => {
+
+    
         setStudentProfile(res.data);
         setFormData({
           user_id: res.data.user.user_id,
@@ -67,8 +70,10 @@ const StudentDashboard = () => {
 
   const fetchEvents = () => {
     setLoading(true);
-    axios.get('http://localhost:8081/event/all')
-      .then(res => {
+
+    axios.get('http://localhost:8080/student/event/all')
+      .then((res) => {
+
         setEvents(res.data);
         setLoading(false);
       })
@@ -80,8 +85,12 @@ const StudentDashboard = () => {
 
   const fetchRegisteredEvents = (studentId) => {
     setLoading(true);
-    axios.get(`http://localhost:8081/registerevent/registeredevents?student_id=${studentId}`)
+
+    axios.get(`http://localhost:8080/student/registerevent/registeredevents?student_id=${studentId}`)
       .then(res => {
+
+    
+
         setRegisteredEvents(res.data);
         const registeredEventIds = res.data.map(item => item.event.event_id);
         setJoinedEvents(registeredEventIds);
@@ -113,7 +122,7 @@ const StudentDashboard = () => {
       event_id: eventId
     };
 
-    axios.post('http://localhost:8081/registerevent/save', payload)
+    axios.post('http://localhost:8080/student/registerevent/save', payload)
       .then(() => {
         alert('Successfully joined event');
         setJoinedEvents(prev => [...prev, eventId]);
@@ -128,7 +137,28 @@ const StudentDashboard = () => {
 
   const handleUpdateSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:8081/student/update', formData)
+      if (!formData.user_name.trim()) {
+    alert("Name is required");
+    return;
+  }
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(formData.email)) {
+    alert("Please enter a valid email");
+    return;
+  }
+
+  if (formData.password.length < 6) {
+    alert("Password must be at least 6 characters");
+    return;
+  }
+
+  const phonePattern = /^[0-9]{10}$/;
+  if (!phonePattern.test(formData.phone_no)) {
+    alert("Phone number must be 10 digits");
+    return;
+  }
+    axios.post('http://localhost:8080/student/student/update', formData)
       .then(() => {
         alert('Profile updated successfully');
         setEditMode(false);
@@ -138,12 +168,12 @@ const StudentDashboard = () => {
   };
 
   return (
-    <div className="d-flex" style={{ minHeight: '100vh' }}>
+    <div className="d-flex" style={{ minHeight: '100vh', backgroundColor: '#FFFDD0' }}> {/* Cream background */}
       <StudentSidebar handleSectionChange={handleSectionChange} />
       <div className="flex-grow-1 p-4">
-        <h2>Welcome Student, {user?.user_name} 👋</h2>
-        <p>Your email: <strong>{user?.email}</strong></p>
-        <hr />
+        <h2 style={{ color: '#800080' }}>Welcome Student, {user?.user_name} 👋</h2>
+        <p style={{ color: '#800080' }}>Your email: <strong>{user?.email}</strong></p>
+        <hr style={{ borderColor: '#FFC0CB' }} />
 
         {activeSection === 'dashboard' && (
           <StudentProfileCard

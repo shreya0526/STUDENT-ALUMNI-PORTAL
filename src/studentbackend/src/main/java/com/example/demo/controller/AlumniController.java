@@ -12,7 +12,7 @@ import com.example.demo.entities.Alumni;
 import com.example.demo.services.AlumniService;
 
 @RestController
-@RequestMapping("/alumni")
+@RequestMapping("/student/alumni")
 public class AlumniController {
 
 	

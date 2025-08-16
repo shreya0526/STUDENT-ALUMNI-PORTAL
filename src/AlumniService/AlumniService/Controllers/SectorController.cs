@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace alumniService.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("/alumni/api/[controller]")]
     [ApiController]
     public class SectorController : ControllerBase
     {

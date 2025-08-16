@@ -4233,23 +4233,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\shrey\\.nuget\\packages\\": {},
+    "C:\\Users\\Yatendra\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\alumniService.csproj",
+      "projectUniqueName": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\alumniService\\alumniService\\alumniService.csproj",
       "projectName": "alumniService",
-      "projectPath": "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\alumniService.csproj",
-      "packagesPath": "C:\\Users\\shrey\\.nuget\\packages\\",
-      "outputPath": "C:\\Student-Alumni-Portal\\src\\AlumniService\\alumniService\\obj\\",
+      "projectPath": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\alumniService\\alumniService\\alumniService.csproj",
+      "packagesPath": "C:\\Users\\Yatendra\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Yatendra\\Desktop\\Student Alumni Portal\\Student-Alumni-Portal\\src\\alumniService\\alumniService\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\shrey\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Yatendra\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4258,7 +4258,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -4339,7 +4338,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

@@ -12,23 +12,33 @@ const AlumniDetails = () => {
   const [formData, setFormData] = useState({
     sectorId: '',
     workId: '',
-    collegeId: '',  // single college id
+    collegeId: '',
   });
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
+  // Helper to safely set error messages
+  const getErrorMessage = (err, fallback) => {
+    return (
+      err.response?.data?.message ||
+      err.response?.data?.error ||
+      (typeof err.response?.data === 'string' ? err.response.data : null) ||
+      fallback
+    );
+  };
+
   useEffect(() => {
-    axios.get('http://localhost:8080/api/College')
+    axios.get('http://localhost:8080/alumni/api/Collge')
       .then(res => setColleges(res.data))
-      .catch(() => setError('Failed to load colleges'));
+      .catch(err => setError(getErrorMessage(err, 'Failed to load colleges')));
 
-    axios.get('http://localhost:8080/api/Sector')
+    axios.get('http://localhost:8080/alumni/api/Sector')
       .then(res => setSectors(res.data))
-      .catch(() => setError('Failed to load sectors'));
+      .catch(err => setError(getErrorMessage(err, 'Failed to load sectors')));
 
-    axios.get('http://localhost:8080/api/WorkTitle')
+    axios.get('http://localhost:8080/alumni/api/WorkTitle')
       .then(res => setWorks(res.data))
-      .catch(() => setError('Failed to load work options'));
+      .catch(err => setError(getErrorMessage(err, 'Failed to load work options')));
   }, []);
 
   const handleChange = (e) => {
@@ -44,7 +54,6 @@ const AlumniDetails = () => {
     setMessage('');
     setError('');
 
-    // Check new camelCase keys here
     if (!formData.sectorId || !formData.workId || !formData.collegeId) {
       setError('Please fill all required fields');
       return;
@@ -54,17 +63,18 @@ const AlumniDetails = () => {
       userId: Number(userId),
       sectorId: Number(formData.sectorId),
       workId: Number(formData.workId),
-      collegeIds: [Number(formData.collegeId)]  // backend expects an array
+      collegeIds: [Number(formData.collegeId)]
     };
 
     try {
-      await axios.post('http://localhost:8080/register', payload);
+      console.log(payload);
+      await axios.post('http://localhost:8080/alumni/alumni/register', payload);
       setMessage('Alumni details registered successfully!');
       setTimeout(() => {
         navigate('/');
       }, 2000);
     } catch (err) {
-      setError(err.response?.data || 'Failed to register alumnus');
+      setError(getErrorMessage(err, 'Failed to register alumnus'));
     }
   };
 
@@ -77,7 +87,7 @@ const AlumniDetails = () => {
 
       <form onSubmit={handleSubmit} style={styles.form}>
         <select
-          name="sectorId"  
+          name="sectorId"
           value={formData.sectorId}
           onChange={handleChange}
           style={styles.input}
@@ -91,7 +101,7 @@ const AlumniDetails = () => {
         </select>
 
         <select
-          name="workId"  
+          name="workId"
           value={formData.workId}
           onChange={handleChange}
           style={styles.input}
@@ -105,7 +115,7 @@ const AlumniDetails = () => {
         </select>
 
         <select
-          name="collegeId"  // changed here too
+          name="collegeId"
           value={formData.collegeId}
           onChange={handleChange}
           style={styles.input}
@@ -130,10 +140,10 @@ const styles = {
     margin: 'auto',
     marginTop: '40px',
     padding: '20px',
-    boxShadow: '0 0 10px rgba(255, 192, 203, 0.3)', // Light pink shadow
+    boxShadow: '0 0 10px rgba(255, 192, 203, 0.3)',
     borderRadius: '10px',
     fontFamily: 'Arial, sans-serif',
-    backgroundColor: '#FFFDD0', // Cream background
+    backgroundColor: '#FFFDD0',
   },
   form: {
     display: 'flex',
@@ -143,26 +153,26 @@ const styles = {
     marginBottom: '12px',
     padding: '10px',
     fontSize: '16px',
-    borderColor: '#FFC0CB', // Light pink border
-    color: '#4B0082', // Dark purple text
-    backgroundColor: '#FFFDD0', // Cream background for inputs
+    borderColor: '#FFC0CB',
+    color: '#4B0082',
+    backgroundColor: '#FFFDD0',
   },
   button: {
     padding: '10px',
     fontSize: '16px',
-    backgroundColor: '#FF69B4', // Medium pink button
+    backgroundColor: '#FF69B4',
     color: '#fff',
     border: 'none',
     cursor: 'pointer',
     borderRadius: '5px',
   },
   error: {
-    color: '#DC3545', // Standard red for errors
+    color: '#DC3545',
     fontSize: '14px',
     marginBottom: '8px'
   },
   success: {
-    color: '#28A745', // Standard green for success
+    color: '#28A745',
     marginBottom: '10px'
   }
 };

@@ -68,6 +68,16 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "alumniService.Controllers.CollgeController",
+    "Method": "GetColleges",
+    "RelativePath": "alumni/api/Collge",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "alumniService.Controllers.EventController",
     "Method": "GetEventsWithAlumniInfo",
     "RelativePath": "alumni/api/Event",
@@ -147,19 +157,9 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "alumniService.Controllers.CollgeController",
-    "Method": "GetColleges",
-    "RelativePath": "api/Collge",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
     "ContainingType": "alumniService.Controllers.SectorController",
     "Method": "GetSectors",
-    "RelativePath": "api/Sector",
+    "RelativePath": "alumni/api/Sector",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -169,7 +169,7 @@
   {
     "ContainingType": "alumniService.Controllers.WorkTitleController",
     "Method": "GetWorkTitles",
-    "RelativePath": "api/WorkTitle",
+    "RelativePath": "alumni/api/WorkTitle",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

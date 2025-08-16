@@ -151,7 +151,7 @@
         }
       }
     },
-    "/api/Collge": {
+    "/alumni/api/Collge": {
       "get": {
         "tags": [
           "Collge"
@@ -292,7 +292,7 @@
         }
       }
     },
-    "/api/Sector": {
+    "/alumni/api/Sector": {
       "get": {
         "tags": [
           "Sector"
@@ -343,7 +343,7 @@
         }
       }
     },
-    "/api/WorkTitle": {
+    "/alumni/api/WorkTitle": {
       "get": {
         "tags": [
           "WorkTitle"

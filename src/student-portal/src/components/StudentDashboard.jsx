@@ -71,7 +71,7 @@ const StudentDashboard = () => {
   const fetchEvents = () => {
     setLoading(true);
 
-    axios.get('http://localhost:8080/student/event/all')
+    axios.get(`http://localhost:8080/student/event/all`)
       .then((res) => {
 
         setEvents(res.data);

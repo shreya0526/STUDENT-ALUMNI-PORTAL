@@ -31,7 +31,7 @@ public class EventController {
 	
 	
 
-    @GetMapping("/{college_id}")
+    @GetMapping("/getevent/{college_id}")
     public List<Event> getEventsByCollege(@PathVariable int college_id) {
         List<Event> events = eventservice.getEventsByCollege(college_id);
         return events;
